@@ -5,9 +5,9 @@ import "./App.css";
 function App() {
   return (
     <>
-      <Header /> {/* Header fixo no topo */}
+      <Header />
       <main className="content">
-        <GamesList /> {/* Sua tela de jogos aqui */}
+        <GamesList />
       </main>
     </>
   );

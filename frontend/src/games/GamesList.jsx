@@ -1,8 +1,6 @@
-import { useState } from "react";
 import "./GamesList.css";
 
 export default function GamesList() {
-
   const games = [
     { id: 1, name: "Jogo da Memória", color: "#FF6B6B" },
     { id: 2, name: "Quebra-Cabeça", color: "#4ECDC4" },
@@ -13,7 +11,6 @@ export default function GamesList() {
     { id: 7, name: "Raciocínio Lógico", color: "#F15BB5" },
     { id: 8, name: "Palavras Cruzadas", color: "#00BBF9" },
   ];
-
 
   const handleGameClick = (gameName) => {
     console.log(`Jogo clicado: ${gameName}`);
@@ -28,7 +25,7 @@ export default function GamesList() {
       </div>
       
       <div className="games-grid">
-        {filteredGames.map((game) => (
+        {games.map((game) => ( // ← MUDEI AQUI: use 'games' não 'filteredGames'
           <div 
             key={game.id}
             className="game-card"
