@@ -1,26 +1,26 @@
-/* Variáveis de Cores */
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Baloo+Paaji+2:wght@400..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
 
 :root {
-    --cor-fundo-claro: #f8faff; /* Fundo levemente azulado/branco */
-    --cor-texto-principal: #3f51b5; /* Cor azul/roxo do título */
+    --cor-fundo-claro: #f8faff;
+    --cor-texto-principal: #3f51b5;
     --cor-texto-secundario: #4c566a; 
     --cor-card: #ffffff;
     --cor-sombra-card: rgba(172, 79, 79, 0.05);
-    --cor-fundo-versiculo: #e8e8f8; /* Fundo claro do texto do versículo */
-    --cor-botao-ouvir: #f55f26; /* Laranja */
+    --cor-fundo-versiculo: #e8e8f8;
+    --cor-botao-ouvir: #f55f26;
     --cor-botao-footer: #e0e0e0;
 }
 
-body{
+.home-page {
     font-family: 'Baloo', 'Baloo Paaji 2', 'Merriweather', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    background: linear-gradient(to top, var(--cor-fundo-claro), #eef2ff); /* Degradê sutil no fundo */
-    min-height: 100vh;
+    background: linear-gradient(to top, var(--cor-fundo-claro), #eef2ff);
+    min-height: calc(100vh - 70px);
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 0;
     margin: 0;
+    width: 100%;
 }
 
 
@@ -35,34 +35,12 @@ body{
     align-items: center;
 }
 
-.header {
-    padding: 40px 0 30px;
-    text-align: center;
-}
-
-.header h1 {
-    color: var(--cor-texto-principal);
-    font-size: 2.5em;
-    margin-bottom: 5px;
-    font-weight: 600;
-}
-
-.header p {
-    color: #6c757d;
-    font-size: 1.1em;
-    margin-top: 0;
-}
-
-/* ------------------------------------- */
-/* Versículo do Dia Card */
-/* ------------------------------------- */
-
 .versiculo-card {
     background-color: var(--cor-card);
     padding: 30px 20px;
     border-radius: 15px;
     box-shadow: 0 5px 15px var(--cor-sombra-card);
-    margin-top: 40px;
+    margin-top: 20px;
     margin-bottom: 40px;
     width: 100%;
     max-width: 700px; 
@@ -71,9 +49,11 @@ body{
 
 .versiculo-card h2 {
     color: var(--cor-texto-principal);
-    font-size: 1.2em;
+    font-size: 1.8em;
     margin-top: 0;
-    font-weight: 500;
+    margin-bottom: 20px;
+    font-weight: 600;
+    text-align: center;
 }
 
 .versiculo-content {
@@ -83,45 +63,62 @@ body{
     border-radius: 8px;
     line-height: 1.6;
     margin: 15px 0;
-    font-size: 1em;
+    font-size: 1.1em;
 }
 
 .texto-versiculo {
     margin: 0;
+    font-size: 1.3em;
+    font-style: italic;
+    line-height: 1.7;
+}
+
+.texto-versiculo.error-text {
+    color: #dc3545;
+    background-color: #f8d7da;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #f5c6cb;
+    font-style: normal;
 }
 
 .referencia {
     font-weight: bold;
-    font-size: 0.9em;
-    margin-top: 10px;
-    color: #777;
+    font-size: 1.1em;
+    margin-top: 15px;
+    color: var(--cor-texto-principal);
+    text-align: center;
 }
 
 .botao-ouvir {
     background-color: var(--cor-botao-ouvir);
     color: white;
-    padding: 10px 30px;
-    border-radius: 20px;
+    padding: 12px 35px;
+    border-radius: 25px;
     cursor: pointer;
     font-weight: bold;
-    margin-top: 15px;
+    margin-top: 20px;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    transition: background-color 0.3s, transform 0.1s;
+    transition: background-color 0.3s, transform 0.2s;
     box-shadow: 0 4px 6px rgba(20, 20, 19, 0.3);
+    border: none;
+    font-size: 1rem;
+    font-family: inherit;
 }
 
 .botao-ouvir:hover {
     background-color: #e5531d;
+    transform: translateY(-2px);
 }
 
 .botoes-navegacao {
     display: flex;
     justify-content: center;
-    gap: 50px; /* Espaço entre os cards */
+    gap: 50px;
     width: 100%;
-    flex-wrap: wrap; /* Responsividade: permite quebra de linha */
+    flex-wrap: wrap;
 }
 
 .card-navegacao {
@@ -137,12 +134,13 @@ body{
     padding: 1.5rem;
     cursor: pointer;
     transition: transform 0.3s, box-shadow 0.3s;
-    border: 1px solid #f0f0f0;
+    border: 2px solid transparent;
 }
 
 .card-navegacao:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    border-color: var(--cor-texto-principal);
 }
 
 .icone-principal {
@@ -153,48 +151,106 @@ body{
     align-items: center;
     justify-content: center;
     margin-bottom: 1.5rem;
-    background: linear-gradient(135deg, var(--card-color) 0%, color-mix(in srgb, var(--card-color) 60%, white) 100%);
+    font-size: 2.5rem;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease;
 }
 
-/* Estilizando os ícones com degradê conforme a imagem */
+.card-navegacao:hover .icone-principal {
+    transform: scale(1.1) rotate(5deg);
+}
 
 .tutorial-card .icone-principal {
-    background: linear-gradient(135deg, #a8c0ff, #88c0d0); /* Degradê azul/roxo claro */
+    background: linear-gradient(135deg, #a8c0ff, #88c0d0);
     color: white;
 }
 
 .jogos-card .icone-principal {
-    background: linear-gradient(135deg, #f4b4d6, #d999e5); /* Degradê rosa/roxo */
+    background: linear-gradient(135deg, #f4b4d6, #d999e5);
     color: white;
 }
 
 .card-navegacao h3 {
     color: var(--cor-texto-secundario);
-    font-size: 1.1em;
-    margin: 0;
+    font-size: 1.5em;
+    margin: 0 0 10px 0;
+    font-weight: 600;
 }
 
-/* --- Media Queries (Responsividade) --- */
+.card-subtitle {
+    color: #666;
+    font-size: 0.95em;
+    margin-top: 5px;
+    line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+    .home-page {
+        min-height: calc(100vh - 60px);
+    }
+    
+    .container {
+        padding: 15px 0 30px;
+    }
+    
+    .versiculo-card {
+        margin-top: 15px;
+        padding: 20px 15px;
+    }
+    
+    .versiculo-card h2 {
+        font-size: 1.5em;
+    }
+    
+    .texto-versiculo {
+        font-size: 1.1em;
+    }
+    
+    .botoes-navegacao {
+        gap: 30px;
+    }
+    
+    .card-navegacao {
+        width: 280px;
+        height: 260px;
+    }
+    
+    .icone-principal {
+        width: 85px;
+        height: 85px;
+        font-size: 2rem;
+    }
+}
 
 @media (max-width: 600px) {
-    .header h1 {
-        font-size: 2em;
+    .home-page {
+        min-height: calc(100vh - 60px);
     }
-
+    
     .versiculo-card {
-        max-width: 90%;
+        max-width: 95%;
         margin-bottom: 30px;
     }
     
     .botoes-navegacao {
         flex-direction: column; 
         align-items: center;
+        gap: 20px;
     }
 
     .card-navegacao {
-        width: 80%; 
+        width: 90%;
         max-width: 300px;
+        height: 240px;
+    }
+    
+    .icone-principal {
+        width: 75px;
+        height: 75px;
+        font-size: 1.8rem;
+    }
+    
+    .card-navegacao h3 {
+        font-size: 1.3em;
     }
 }

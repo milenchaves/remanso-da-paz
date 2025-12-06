@@ -9,6 +9,7 @@ html, body {
   padding: 0;
   width: 100%;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: #f8fafc;
 }
 
 #root {
@@ -23,6 +24,6 @@ html, body {
 
 @media (max-width: 767px) {
   .content {
-    padding-top: 1px;
+    padding-top: 60px;
   }
 }

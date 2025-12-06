@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import './home.css';
+import './Home.css';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
-// Importe o arquivo CSS (supondo que o nome seja Home.css ou style.css)
-// import './Home.css'; 
+import { bibleAPI } from '../../services/api';
 
 const Home = () => {
   const navigate = useNavigate();
@@ -11,13 +9,11 @@ const Home = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:3000';
-
   const fetchVersiculo = async () => {
     try {
       setLoading(true);
       setError(null);
-      const res = await axios.get(`${API_BASE}/api/versiculo-do-dia`);
+      const res = await bibleAPI.getDailyVerse();
       if (res.data && res.data.sucesso) {
         setVersiculo(res.data.dados);
       } else {
@@ -32,7 +28,6 @@ const Home = () => {
 
   useEffect(() => {
     fetchVersiculo();
-    // Atualiza a cada hora para garantir que, quando o backend trocar, o frontend atualize sozinho
     const interval = setInterval(fetchVersiculo, 60 * 60 * 1000);
     return () => clearInterval(interval);
   }, []);
@@ -40,21 +35,13 @@ const Home = () => {
   return (
     <div className="home-page">
       <main className="container">
-        
-        {/* Cabeçalho */}
-        <header className="header">
-          <h1>Remanso da Paz</h1>
-          <p>Bem-vindo! Escolha uma atividade</p>
-        </header>
-
-        {/* Versículo do Dia */}
         <section className="versiculo-card">
           <h2>Versículo do Dia</h2>
           <div className="versiculo-content">
             {loading ? (
               <p className="texto-versiculo">Carregando versículo...</p>
             ) : error ? (
-              <p className="texto-versiculo" style={{ color: 'red' }}>{error}</p>
+              <p className="texto-versiculo error-text">{error}</p>
             ) : versiculo ? (
               <>
                 <div className="texto-versiculo" dangerouslySetInnerHTML={{ __html: versiculo.texto }} />
@@ -64,43 +51,47 @@ const Home = () => {
               <p className="texto-versiculo">Nenhum versículo disponível</p>
             )}
           </div>
-          <button className="botao-ouvir">Ouvir Versículo</button>
+          <button 
+            className="botao-ouvir" 
+            onClick={() => alert('Funcionalidade de áudio em desenvolvimento')}
+          >
+            Ouvir Versículo
+          </button>
         </section>
 
-        {/* Botões de Navegação */}
         <section className="botoes-navegacao">
           
-          {/* Card Tutoriais */}
-          <div className="card-navegacao tutorial-card">
-            {/* Ícone substituindo a imagem azul/roxa */}
-            <div className="icone-principal">
-               
-            </div>
+          <div 
+            className="card-navegacao tutorial-card"
+            role="button"
+            tabIndex={0}
+            onClick={() => alert('Tutoriais em desenvolvimento')}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') alert('Tutoriais em desenvolvimento');
+            }}
+          >
+            <div className="icone-principal">📚</div>
             <h3>Tutoriais</h3>
+            <p className="card-subtitle">Aprenda com guias passo a passo</p>
           </div>
 
-          {/* Card Jogos */}
-            <div
-              className="card-navegacao jogos-card"
-              role="button"
-              tabIndex={0}
-              onClick={() => navigate('/games')}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') navigate('/games');
-              }}
-            >
-              {/* Ícone substituindo a imagem roxa/rosa */}
-              <div className="icone-principal">
-
-              </div>
-              <h3>Jogos</h3>
-            </div>
+          <div
+            className="card-navegacao jogos-card"
+            role="button"
+            tabIndex={0}
+            onClick={() => navigate('/games')}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') navigate('/games');
+            }}
+          >
+            <div className="icone-principal">🎮</div>
+            <h3>Jogos</h3>
+            <p className="card-subtitle">Divirta-se aprendendo</p>
+          </div>
           
         </section>
         
       </main>
-
-     
     </div>
   );
 };
