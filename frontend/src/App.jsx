@@ -1,15 +1,18 @@
-import Header from "./components/Header";
-import GamesList from "./games/GamesList";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
+import Home from "./pages/home/home";
+import GamesList from "./pages/games/GamesList";
 
 function App() {
   return (
-    <>
-      <Header />
+    <BrowserRouter>
       <main className="content">
-        <GamesList />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/games" element={<GamesList />} />
+        </Routes>
       </main>
-    </>
+    </BrowserRouter>
   );
 }
 

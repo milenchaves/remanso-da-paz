@@ -1,0 +1,200 @@
+/* Variáveis de Cores */
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Baloo+Paaji+2:wght@400..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
+
+:root {
+    --cor-fundo-claro: #f8faff; /* Fundo levemente azulado/branco */
+    --cor-texto-principal: #3f51b5; /* Cor azul/roxo do título */
+    --cor-texto-secundario: #4c566a; 
+    --cor-card: #ffffff;
+    --cor-sombra-card: rgba(172, 79, 79, 0.05);
+    --cor-fundo-versiculo: #e8e8f8; /* Fundo claro do texto do versículo */
+    --cor-botao-ouvir: #f55f26; /* Laranja */
+    --cor-botao-footer: #e0e0e0;
+}
+
+body{
+    font-family: 'Baloo', 'Baloo Paaji 2', 'Merriweather', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: linear-gradient(to top, var(--cor-fundo-claro), #eef2ff); /* Degradê sutil no fundo */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+
+.container {
+    max-width: 900px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px 0 50px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    padding: 40px 0 30px;
+    text-align: center;
+}
+
+.header h1 {
+    color: var(--cor-texto-principal);
+    font-size: 2.5em;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.header p {
+    color: #6c757d;
+    font-size: 1.1em;
+    margin-top: 0;
+}
+
+/* ------------------------------------- */
+/* Versículo do Dia Card */
+/* ------------------------------------- */
+
+.versiculo-card {
+    background-color: var(--cor-card);
+    padding: 30px 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px var(--cor-sombra-card);
+    margin-top: 40px;
+    margin-bottom: 40px;
+    width: 100%;
+    max-width: 700px; 
+    border: 1px solid #f0f0f0;
+}
+
+.versiculo-card h2 {
+    color: var(--cor-texto-principal);
+    font-size: 1.2em;
+    margin-top: 0;
+    font-weight: 500;
+}
+
+.versiculo-content {
+    background-color: var(--cor-fundo-versiculo);
+    color: var(--cor-texto-secundario);
+    padding: 20px;
+    border-radius: 8px;
+    line-height: 1.6;
+    margin: 15px 0;
+    font-size: 1em;
+}
+
+.texto-versiculo {
+    margin: 0;
+}
+
+.referencia {
+    font-weight: bold;
+    font-size: 0.9em;
+    margin-top: 10px;
+    color: #777;
+}
+
+.botao-ouvir {
+    background-color: var(--cor-botao-ouvir);
+    color: white;
+    padding: 10px 30px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    transition: background-color 0.3s, transform 0.1s;
+    box-shadow: 0 4px 6px rgba(20, 20, 19, 0.3);
+}
+
+.botao-ouvir:hover {
+    background-color: #e5531d;
+}
+
+.botoes-navegacao {
+    display: flex;
+    justify-content: center;
+    gap: 50px; /* Espaço entre os cards */
+    width: 100%;
+    flex-wrap: wrap; /* Responsividade: permite quebra de linha */
+}
+
+.card-navegacao {
+    background-color: var(--cor-card);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px var(--cor-sombra-card);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 300px; 
+    height: 280px;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid #f0f0f0;
+}
+
+.card-navegacao:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.icone-principal {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, var(--card-color) 0%, color-mix(in srgb, var(--card-color) 60%, white) 100%);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+/* Estilizando os ícones com degradê conforme a imagem */
+
+.tutorial-card .icone-principal {
+    background: linear-gradient(135deg, #a8c0ff, #88c0d0); /* Degradê azul/roxo claro */
+    color: white;
+}
+
+.jogos-card .icone-principal {
+    background: linear-gradient(135deg, #f4b4d6, #d999e5); /* Degradê rosa/roxo */
+    color: white;
+}
+
+.card-navegacao h3 {
+    color: var(--cor-texto-secundario);
+    font-size: 1.1em;
+    margin: 0;
+}
+
+/* --- Media Queries (Responsividade) --- */
+
+@media (max-width: 600px) {
+    .header h1 {
+        font-size: 2em;
+    }
+
+    .versiculo-card {
+        max-width: 90%;
+        margin-bottom: 30px;
+    }
+    
+    .botoes-navegacao {
+        flex-direction: column; 
+        align-items: center;
+    }
+
+    .card-navegacao {
+        width: 80%; 
+        max-width: 300px;
+    }
+}
