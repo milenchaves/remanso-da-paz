@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
 const bibleRoutes = require('./routes/bibleRoutes');
+const tutorialRoutes = require('./routes/tutorialRoutes');
 const { agendarAtualizacaoDiaria, inicializarVersiculo } = require('./jobs/bibleJob');
 
 const app = express();
@@ -23,6 +24,7 @@ app.get('/', (req, res) => {
     });
 
     app.use('/api', bibleRoutes);
+    app.use('/api', tutorialRoutes);
 
     const iniciarServidor = async () => {
     try {
