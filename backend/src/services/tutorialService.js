@@ -13,19 +13,19 @@ class TutorialService {
             step: 1,
             title: 'Abrir a porta vermelha.',
             description: 'Primeiro, você vai procurar a porta vermelha do YouTube na tela do seu celular (aquela com o desenho de uma seta / "play" de lado). Lembre-se: Se for difícil de achar no meio dos outros desenhos, é só deslizar o dedo na tela devagar, como quem está folheando um livro.',
-            image: null
+            image: '/tutorials/tutorial-1/iconeYoutube.webp'
           },
           {
             step: 2,
             title: 'Chamar o microfone.',
             description: 'Quando você entrar no YouTube, vai ver uma barra branca lá em cima, que é a "janela de pesquisa". No cantinho dessa barra, tem um desenho pequenininho de um Microfone. Ele está lá te esperando! Você vai tocar nesse Microfone uma vez com o dedo.',
-            image: null
+            image: '/tutorials/tutorial-1/passo2.jpeg'
           },
           {
             step: 3,
             title: 'Falar com o celular.',
             description: 'Quando você toca no microfone, o celular fica atento, esperando o que você tem a dizer. Ele até faz um barulhinho! Você vai aproximar o celular da boca e dizer, bem devagar e com clareza: "Quero ouvir tal música". Pronto! O celular vai buscar a sua música na hora, sem você precisar digitar nada!',
-            image: null
+            image: '/tutorials/tutorial-1/passo3.jpeg'
           }
         ],
         conclusion: 'Viu só? Você usou a sua voz, que é a ferramenta mais poderosa que você tem, para mandar no celular. Você não precisou forçar a vista com as letrinhas e achou o que queria rapidinho. A partir de hoje, sempre que for procurar algo, lembre-se: Encontre o microfone e use a sua voz!'
@@ -42,19 +42,19 @@ class TutorialService {
             step: 1,
             title: 'Abrir a porta verde.',
             description: 'Procure na tela do celular o ícone verde do WhatsApp, aquele com o desenho de um telefone dentro. Se tiver muita coisa na tela, não tem problema. É só deslizar o dedo para o lado, devagarinho, como quem vira a página de um álbum de fotos. Quando encontrar, toque nele uma vez.',
-            image: null
+            image: '/tutorials/tutorial-2/iconeWhatsApp.png'
           },
           {
             step: 2,
             title: 'Encontrar o nome do seu filho.',
             description: 'Dentro do WhatsApp você vai ver uma lista de conversas, assim como uma agenda de pessoas queridas. Procure pelo nome do seu filho. Às vezes ele está logo no começo, às vezes mais para baixo, é só deslizar com calma. Quando achar, toque em cima do nome dele. Assim você abre a conversa. Pronto, agora vocês já estão "na mesma sala".',
-            image: null
+            image: '/tutorials/tutorial-2/passo2.png'
           },
           {
             step: 3,
             title: 'Tocar no botão de ligação.',
             description: 'Lá no alto da tela, no cantinho direito, você vai ver um símbolo de telefone. Ele é o botão mágico que faz a ligação acontecer. Toque nele uma vez… e então é só esperar um pouquinho. O celular começa a chamar — trim… trim… Em instantes, você vai ouvir aquela voz que faz tudo valer a pena: "Oi, mãe!" "Oi, pai!" "Tudo bem?"',
-            image: null
+            image: '/tutorials/tutorial-2/passo3.png'
           }
         ],
         conclusion: 'Viu como é simples? Com três toques, você atravessa quilômetros e chega pertinho de quem ama. O WhatsApp vira uma ponte e você já sabe exatamente como atravessá-la. Sempre que bater saudade, lembre-se: Procure a porta verde, ache o nome dele e toque no telefone. Seu filho está sempre a uma ligação de distância.'
@@ -71,19 +71,19 @@ class TutorialService {
             step: 1,
             title: 'Abrir a porta verde,',
             description: 'Procure na tela do celular o WhatsApp — aquela bolinha verde com uma pontinha de lado que, dentro dela, tem o desenho de um telefone. Se não aparecer logo, deslize a tela devagar, como quem vira a página de um caderno. Toque no WhatsApp. Agora você está no lugar onde todas as conversas vivem.',
-            image: null
+            image: '/tutorials/tutorial-3/iconeWhatsApp.png'
           },
           {
             step: 2,
             title: 'Escolher para quem quer mandar o áudio,',
             description: 'Você verá uma lista de pessoas com quem já conversou: seus filhos, seus amigos, seus parentes. Procure o nome da pessoa para quem deseja mandar a mensagem de voz. Quando encontrar, toque no nome. Isso abre a conversa — como se você estivesse entrando na sala dela para conversar.',
-            image: null
+            image: '/tutorials/tutorial-3/passo2.png'
           },
           {
             step: 3,
             title: 'Enviar o áudio,',
             description: 'Lá embaixo, bem no cantinho direito da tela, você vai ver um microfone. Ele é seu amigo. É ele quem guarda a sua voz para enviar. Agora é simples: Pressione e segure o microfone com o dedo. Não solte ainda. Quando você segura, o celular começa a gravar. É só falar normalmente, com calma, como se a pessoa estivesse bem ali: "Oi, meu filho… só passando para saber se está tudo bem." "Bom dia! Dormiu bem?" "Queria te contar uma novidade…" Quando terminar de falar, solte o botão. Assim que você solta, o áudio é enviado automaticamente. E do outro lado, a pessoa vai ouvir sua voz — clara, viva, cheia de carinho.',
-            image: null
+            image: '/tutorials/tutorial-3/passo3.png'
           }
         ],
         conclusion: 'Viu como é simples? Mandar um áudio é como deixar um recado na porta da casa de alguém, só que muito mais rápido. E o melhor: você não precisa digitar nada. Basta segurar o microfone, falar, e soltar. Sempre que quiser conversar sem complicação, lembre-se: Segure o microfone, fale com o coração, solte para enviar.'
@@ -98,33 +98,27 @@ class TutorialService {
         steps: [
           {
             step: 1,
-            title: 'Abra a lista de aplicativos.',
-            description: 'Na tela principal, deslize o dedo de baixo para cima: Isso mostra todos os aplicativos do celular. Caso isso não funcione, deslize o dedo da direita para a esquerda.',
-            image: null
+            title: 'Abra a câmera.',
+            description: 'Na tela principal, deslize o dedo de baixo para cima para ver todos os aplicativos. Procure o ícone da Câmera (aquele com desenho de máquina fotográfica) e toque nele.',
+            image: '/tutorials/tutorial-4/passo1.png'
           },
           {
             step: 2,
-            title: 'Encontre o aplicativo "Câmera".',
-            description: 'Procure o ícone que tem o desenho de uma câmera. Quando encontrar, toque nele.',
-            image: null
+            title: 'Aponte o celular.',
+            description: 'Com a câmera aberta, mova o celular até que o que você quer fotografar apareça completamente na tela. Se você quiser tirar uma selfie, toque no ícone que faz a câmera virar para você. Esse ícone costuma ter duas flechas formando um círculo, indicando que a câmera vai inverter. Depois que a imagem aparecer mostrando o seu rosto, posicione o celular um pouco afastado até ficar confortável.',
+            image: '/tutorials/tutorial-4/passo2.jpeg'
           },
           {
             step: 3,
-            title: 'Aponte o celular.',
-            description: 'Com a câmera aberta, mova o celular até que o que você quer fotografar apareça completamente na tela. Se você quiser tirar uma selfie, toque no ícone que faz a câmera virar para você. Esse ícone costuma ter duas flechas formando um círculo, indicando que a câmera vai inverter. Depois que a imagem aparecer mostrando o seu rosto, posicione o celular um pouco afastado até ficar confortável.',
-            image: null
+            title: 'Toque no botão branco.',
+            description: 'Na parte de baixo da tela, há um botão redondo e branco: Toque nele uma vez para tirar a foto.',
+            image: '/tutorials/tutorial-4/passo3.jpeg'
           },
           {
             step: 4,
-            title: 'Toque no botão branco.',
-            description: 'Na parte de baixo da tela, há um botão redondo e branco: Toque nele uma vez para tirar a foto.',
-            image: null
-          },
-          {
-            step: 5,
             title: 'Para ver a foto.',
             description: 'A foto aparece num pequeno quadrado no canto inferior: Toque nele se quiser conferir.',
-            image: null
+            image: '/tutorials/tutorial-4/passo4.jpeg'
           }
         ],
         conclusion: 'Agora você sabe como capturar esses momentos especiais! Sempre que quiser guardar uma lembrança, é só abrir a câmera, apontar e tocar no botão branco.'
@@ -141,37 +135,37 @@ class TutorialService {
             step: 1,
             title: 'Abra o WhatsApp.',
             description: 'Na tela principal, procure o ícone verde com um telefone branco dentro de um balão de conversa. Toque nele.',
-            image: null
+            image: '/tutorials/tutorial-5/iconeWhatsApp.png'
           },
           {
             step: 2,
             title: 'Escolha com quem você quer conversar.',
             description: 'Você vai ver uma lista com os nomes das pessoas com quem você conversa. Toque no nome da pessoa para quem você quer enviar a foto. Se você não encontrar o nome logo de cara, pode rolar a tela para cima ou para baixo até achar.',
-            image: null
+            image: '/tutorials/tutorial-5/passo2.png'
           },
           {
             step: 3,
             title: 'Encontre o botão de enviar foto.',
             description: 'Olhe na parte de baixo da tela, do lado esquerdo onde você digita as mensagens. Você vai ver um clipe de papel ou um sinal de "mais" (+). Toque nele.',
-            image: null
+            image: '/tutorials/tutorial-5/passo3.png'
           },
           {
             step: 4,
             title: 'Escolha "Galeria" ou "Fotos".',
             description: 'Vai aparecer uma lista de opções. Procure e toque em "Galeria" ou em um ícone com desenho de montanhas ou paisagem, é onde ficam suas fotos.',
-            image: null
+            image: '/tutorials/tutorial-5/passo4.png'
           },
           {
             step: 5,
             title: 'Encontre a foto que você quer enviar.',
             description: 'Todas as suas fotos vão aparecer na tela. Role para cima ou para baixo até encontrar aquela que você quer mandar. Quando achar, toque nela uma vez. Ela vai ficar marcada com um sinal de confirmação. Dica: As fotos mais recentes costumam aparecer primeiro.',
-            image: null
+            image: '/tutorials/tutorial-5/passo5.png'
           },
           {
             step: 6,
             title: 'Envie a foto.',
             description: 'Depois de escolher a foto, procure um botão verde redondo com uma setinha branca, geralmente no canto inferior direito. Toque nele. Pronto! A foto foi enviada. Você vai vê-la aparecer na conversa, e a pessoa do outro lado vai receber.',
-            image: null
+            image: '/tutorials/tutorial-5/passo6.png'
           }
         ],
         conclusion: 'Agora você pode compartilhar seus momentos especiais com quem você ama! Sempre que quiser enviar uma foto, lembre-se: abra o WhatsApp, escolha a pessoa, toque no clipe, selecione a foto e envie.'
@@ -235,19 +229,19 @@ class TutorialService {
             step: 1,
             title: 'Abra o aplicativo Google.',
             description: 'Na tela principal, procure o ícone do Google — é uma letra G colorida (azul, vermelho, amarelo e verde). Toque nele. Se não achar na tela principal, deslize o dedo de baixo para cima para ver todos os aplicativos e procure lá.',
-            image: null
+            image: '/tutorials/tutorial-7/passo1.png'
           },
           {
             step: 2,
             title: 'Toque no microfone.',
             description: 'Dentro do aplicativo Google, você vai ver uma barra branca onde normalmente as pessoas escrevem o que querem pesquisar. Do lado direito dessa barra, há um ícone de microfone (parece um microfone de verdade). Toque nele.',
-            image: null
+            image: '/tutorials/tutorial-7/passo2.png'
           },
           {
             step: 3,
             title: 'Fale o que você quer saber.',
             description: 'Assim que você tocar no microfone, pode aparecer uma mensagem como "Fale agora" ou "Escutando...". É a sua vez! Fale de forma clara o que você quer pesquisar. Exemplos: "Receita de bolo de fubá", "Previsão do tempo para hoje", "Farmácia perto de mim", "Quantos anos tem a Xuxa?"',
-            image: null
+            image: '/tutorials/tutorial-7/passo3.png'
           },
           {
             step: 4,
@@ -393,27 +387,25 @@ class TutorialService {
             step: 1,
             title: 'Abrir o WhatsApp.',
             description: 'Procure na tela do celular o ícone verde do WhatsApp, aquele com o desenho de um telefone dentro de um balão de mensagem. Se houver muitos ícones, basta deslizar o dedo devagar até encontrá-lo. Quando achar, toque nele uma vez.',
-            image: 'frontend/public/tutorials/tutorial-11/iconeWhatsApp.png'
-
+            image: '/tutorials/tutorial-11/iconeWhatsApp.png'
           },
           {
             step: 2,
             title: 'Encontrar o nome do amigo.',
             description: 'Dentro do WhatsApp, você verá uma lista de conversas, como uma agenda de pessoas queridas. Procure pelo nome da sua amiga. Às vezes ele está no começo, às vezes mais para baixo — deslize com calma até encontrá-lo. Toque no nome dela para abrir a conversa e já estar "na mesma sala virtual".',
-            image: 'frontend/public/tutorials/tutorial-11/nomeAmigo.jpeg'
+            image: '/tutorials/tutorial-11/nomeAmigo.jpeg'
           },
           {
             step: 3,
             title: 'Tocar no botão de vídeo.',
             description: 'No alto da tela, no canto direito, você verá um símbolo de câmera de vídeo. Ele é o botão mágico que inicia a chamada de vídeo. Toque nele uma vez e aguarde um instante. O celular começará a chamar e, quando seu amigo atender, você verá o rosto dela na tela, e ela poderá ver exatamente onde você está.',
-            image: 'frontend/public/tutorials/tutorial-11/botaoVideo.jpeg'
+            image: '/tutorials/tutorial-11/botaoVideo.jpeg'
           },
           {
             step: 4,
             title: 'Desligar a ligação.',
             description: 'Quando quiser encerrar a chamada, basta tocar no botão vermelho de telefone, que normalmente fica no centro inferior da tela. Pronto, a chamada termina imediatamente, e você pode guardar o celular ou continuar o passeio sem preocupações.',
-            image: 'frontend/public/tutorials/tutorial-11/passo4.jpeg',
-            image: 'frontend/public/tutorials/tutorial-11/botaoDesligar.jpeg'
+            image: '/tutorials/tutorial-11/botaoDesligar.jpeg'
           }
         ],
         conclusion: 'Viu como é simples? Com três toques, você compartilha o passeio e aproxima quem está longe. Sempre que quiser mostrar um lugar ou um momento especial, lembre-se: abra o WhatsApp, encontre o nome da amiga e toque na câmera de vídeo. Ela está sempre a uma chamada de vídeo de distância.'
