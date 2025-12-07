@@ -3,56 +3,89 @@
 :root {
     --cor-fundo-claro: #f8faff;
     --cor-texto-principal: #3f51b5;
-    --cor-texto-secundario: #4c566a; 
+    --cor-texto-secundario: #4c566a;
     --cor-card: #ffffff;
     --cor-sombra-card: rgba(172, 79, 79, 0.05);
     --cor-fundo-versiculo: #e8e8f8;
     --cor-botao-ouvir: #f55f26;
     --cor-botao-footer: #e0e0e0;
+    --cor-tutorial: #a8c0ff;
+    --cor-jogos: #f15bb5;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 .home-page {
     font-family: 'Baloo', 'Baloo Paaji 2', 'Merriweather', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     background: linear-gradient(to top, var(--cor-fundo-claro), #eef2ff);
-    min-height: calc(100vh - 70px);
+    height: 100vh;
+    padding-top: 70px;
+    margin: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0;
-    margin: 0;
     width: 100%;
+    overflow-y: hidden;
 }
 
+.bem-vindo {
+    margin: 0 auto 10px auto;
+    padding: 5px 20px 10px 20px;
+    text-align: center;
+    width: 90%;
+    max-width: 700px;
+}
+
+.home-title {
+    color: var(--cor-texto-principal);
+    font-size: 2.5rem;
+    margin: 0 0 5px 0;
+    font-weight: 900;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.bem-vindo-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    margin: 0;
+    font-weight: 400;
+    line-height: 1.5;
+}
 
 .container {
     max-width: 900px;
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
-    padding: 20px 0 50px;
-    flex-grow: 1;
+    padding: 0 20px 20px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
 }
 
 .versiculo-card {
     background-color: var(--cor-card);
-    padding: 30px 20px;
+    padding: 35px 30px;
     border-radius: 15px;
     box-shadow: 0 5px 15px var(--cor-sombra-card);
-    margin-top: 20px;
-    margin-bottom: 40px;
+    margin: 15px auto 30px auto;
     width: 100%;
-    max-width: 700px; 
+    max-width: 700px;
     border: 1px solid #f0f0f0;
 }
 
 .versiculo-card h2 {
     color: var(--cor-texto-principal);
-    font-size: 1.8em;
+    font-size: 1.8rem;
     margin-top: 0;
     margin-bottom: 20px;
-    font-weight: 600;
+    font-weight: 700;
     text-align: center;
 }
 
@@ -63,12 +96,12 @@
     border-radius: 8px;
     line-height: 1.6;
     margin: 15px 0;
-    font-size: 1.1em;
+    font-size: 1.1rem;
 }
 
 .texto-versiculo {
     margin: 0;
-    font-size: 1.3em;
+    font-size: 1.3rem;
     font-style: italic;
     line-height: 1.7;
 }
@@ -84,7 +117,7 @@
 
 .referencia {
     font-weight: bold;
-    font-size: 1.1em;
+    font-size: 1.1rem;
     margin-top: 15px;
     color: var(--cor-texto-principal);
     text-align: center;
@@ -113,144 +146,426 @@
     transform: translateY(-2px);
 }
 
+.botao-ouvir:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.botao-ouvir.parar {
+    background-color: #dc3545;
+}
+
+.botao-ouvir.parar:hover {
+    background-color: #c82333;
+}
+
 .botoes-navegacao {
-    display: flex;
-    justify-content: center;
-    gap: 50px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
     width: 100%;
-    flex-wrap: wrap;
+    max-width: 700px;
+    margin: 10px auto 0 auto;
+    padding: 0 1rem;
 }
 
 .card-navegacao {
-    background-color: var(--cor-card);
+    background: white;
     border-radius: 15px;
-    box-shadow: 0 5px 15px var(--cor-sombra-card);
+    padding: 1.5rem;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 2px solid transparent;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    width: 300px; 
-    height: 280px;
-    padding: 1.5rem;
-    cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
-    border: 2px solid transparent;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.card-navegacao::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--card-color), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .card-navegacao:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
-    border-color: var(--cor-texto-principal);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    border-color: var(--card-color, #4A90E2);
+}
+
+.card-navegacao:hover::before {
+    opacity: 1;
+}
+
+.card-navegacao:focus {
+    outline: 3px solid var(--card-color);
+    outline-offset: 3px;
+}
+
+.card-navegacao:active {
+    transform: translateY(-4px);
 }
 
 .icone-principal {
-    width: 100px;
-    height: 100px;
+    width: 95px;
+    height: 95px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.4rem;
     font-size: 2.5rem;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(135deg, var(--card-color) 0%, color-mix(in srgb, var(--card-color) 60%, white) 100%);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease;
+    color: white;
+    text-shadow: 1px 2px 3px rgba(0,0,0,0.2);
+    flex-shrink: 0;
 }
 
 .card-navegacao:hover .icone-principal {
     transform: scale(1.1) rotate(5deg);
 }
 
-.tutorial-card .icone-principal {
-    background: linear-gradient(135deg, #a8c0ff, #88c0d0);
-    color: white;
+.tutorial-card {
+    --card-color: #a8c0ff;
 }
 
-.jogos-card .icone-principal {
-    background: linear-gradient(135deg, #f4b4d6, #d999e5);
-    color: white;
+.jogos-card {
+    --card-color: var(--cor-jogos);
 }
 
 .card-navegacao h3 {
-    color: var(--cor-texto-secundario);
-    font-size: 1.5em;
-    margin: 0 0 10px 0;
-    font-weight: 600;
+    font-size: 1.8rem;
+    color: #333;
+    margin: 0 0 0.5rem 0;
+    font-weight: 700;
+    line-height: 1.3;
 }
 
 .card-subtitle {
-    color: #666;
-    font-size: 0.95em;
-    margin-top: 5px;
-    line-height: 1.4;
+    font-size: 1.1rem;
+    color: #888;
+    margin-top: 0.5rem;
+    padding: 0.4rem 1rem;
+    background-color: #f8f9fa;
+    border-radius: 18px;
+    transition: all 0.3s ease;
+    width: fit-content;
+    font-weight: 500;
+}
+
+.tutorial-card:hover .card-subtitle {
+    background-color: #a8c0ff;
+    color: white;
+}
+
+.jogos-card:hover .card-subtitle {
+    background-color: var(--cor-jogos);
+    color: white;
+}
+
+@media (max-width: 1200px) {
+    .home-page {
+        padding-top: 70px;
+    }
+    .bem-vindo {
+        margin-bottom: 5px;
+    }
+    .versiculo-card {
+        padding: 20px;
+        margin-bottom: 12px;
+    }
+    .botoes-navegacao {
+        gap: 12px;
+    }
+    .card-navegacao {
+        height: auto;
+    }
+}
+
+@media (max-width: 900px) {
+    .home-page {
+        padding-top: 65px;
+    }
+    .versiculo-card {
+        padding: 18px;
+    }
+    .card-navegacao {
+        height: 180px;
+        padding: 1rem;
+    }
+    .icone-principal {
+        width: 70px;
+        height: 70px;
+        font-size: 1.8rem;
+    }
 }
 
 @media (max-width: 768px) {
     .home-page {
-        min-height: calc(100vh - 60px);
+        padding-top: 65px;
     }
-    
+    .bem-vindo {
+        margin-bottom: 3px;
+        padding: 2px 15px;
+    }
+    .home-title {
+        font-size: 1.6rem;
+        margin-bottom: 2px;
+    }
+    .bem-vindo-subtitle {
+        font-size: 0.9rem;
+    }
     .container {
-        padding: 15px 0 30px;
+        padding: 0 12px 8px 12px;
     }
-    
     .versiculo-card {
-        margin-top: 15px;
-        padding: 20px 15px;
+        padding: 15px 15px;
+        margin-bottom: 10px;
     }
-    
     .versiculo-card h2 {
-        font-size: 1.5em;
+        font-size: 1.2rem;
+        margin-bottom: 8px;
     }
-    
+    .versiculo-content {
+        padding: 10px;
+        margin: 6px 0;
+    }
     .texto-versiculo {
-        font-size: 1.1em;
+        font-size: 0.9rem;
     }
-    
+    .referencia {
+        font-size: 0.85rem;
+        margin-top: 6px;
+    }
+    .botao-ouvir {
+        padding: 7px 20px;
+        font-size: 0.85rem;
+        margin-top: 8px;
+    }
     .botoes-navegacao {
-        gap: 30px;
+        gap: 10px;
+        padding: 0 12px;
     }
-    
     .card-navegacao {
-        width: 280px;
-        height: 260px;
+        height: auto;
+        padding: 0.9rem;
     }
-    
     .icone-principal {
-        width: 85px;
-        height: 85px;
-        font-size: 2rem;
+        width: 60px;
+        height: 60px;
+        font-size: 1.6rem;
+        margin-bottom: 0.8rem;
+    }
+    .card-navegacao h3 {
+        font-size: 1.4rem;
+        margin-bottom: 0.3rem;
+    }
+    .card-subtitle {
+        font-size: 1rem;
+        padding: 0.25rem 0.7rem;
     }
 }
 
 @media (max-width: 600px) {
     .home-page {
-        min-height: calc(100vh - 60px);
+        padding-top: 60px;
     }
-    
+    .bem-vindo {
+        margin-bottom: 2px;
+        padding: 2px 12px;
+    }
+    .home-title {
+        font-size: 1.4rem;
+        letter-spacing: 0.5px;
+    }
+    .bem-vindo-subtitle {
+        font-size: 0.85rem;
+    }
+    .container {
+        padding: 0 10px 5px 10px;
+    }
     .versiculo-card {
-        max-width: 95%;
-        margin-bottom: 30px;
+        padding: 12px 12px;
+        margin-bottom: 8px;
+        border-radius: 10px;
     }
-    
+    .versiculo-card h2 {
+        font-size: 1.1rem;
+        margin-bottom: 6px;
+    }
+    .versiculo-content {
+        padding: 8px;
+        margin: 5px 0;
+        font-size: 0.85rem;
+    }
+    .texto-versiculo {
+        font-size: 0.85rem;
+        line-height: 1.4;
+    }
+    .referencia {
+        font-size: 0.8rem;
+        margin-top: 5px;
+    }
+    .botao-ouvir {
+        padding: 6px 18px;
+        font-size: 0.8rem;
+        margin-top: 6px;
+    }
     .botoes-navegacao {
-        flex-direction: column; 
-        align-items: center;
-        gap: 20px;
+        gap: 8px;
+        padding: 0 10px;
     }
-
     .card-navegacao {
-        width: 90%;
-        max-width: 300px;
-        height: 240px;
+        height: auto;
+        padding: 0.8rem;
     }
-    
     .icone-principal {
-        width: 75px;
-        height: 75px;
+        width: 55px;
+        height: 55px;
+        font-size: 1.5rem;
+        margin-bottom: 0.6rem;
+    }
+    .card-navegacao h3 {
+        font-size: 1.3rem;
+        margin-bottom: 0.25rem;
+    }
+    .card-subtitle {
+        font-size: 0.95rem;
+        padding: 0.2rem 0.6rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .home-page {
+        padding-top: 58px;
+    }
+    .bem-vindo {
+        padding: 1px 10px;
+    }
+    .home-title {
+        font-size: 1.2rem;
+    }
+    .bem-vindo-subtitle {
+        font-size: 0.8rem;
+    }
+    .versiculo-card {
+        padding: 10px 10px;
+    }
+    .versiculo-card h2 {
+        font-size: 1rem;
+    }
+    .versiculo-content {
+        padding: 7px;
+        font-size: 0.8rem;
+    }
+    .texto-versiculo {
+        font-size: 0.8rem;
+    }
+    .referencia {
+        font-size: 0.75rem;
+    }
+    .botao-ouvir {
+        padding: 5px 15px;
+        font-size: 0.75rem;
+    }
+    .card-navegacao {
+        height: auto;
+        padding: 0.7rem;
+    }
+    .icone-principal {
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+    }
+    .card-navegacao h3 {
+        font-size: 1.2rem;
+    }
+    .card-subtitle {
+        font-size: 0.9rem;
+        padding: 0.15rem 0.5rem;
+    }
+}
+
+@media (max-height: 700px) {
+    .home-page {
+        padding-top: 60px;
+    }
+    .bem-vindo {
+        margin-bottom: 2px;
+        padding: 2px 15px;
+    }
+    .home-title {
         font-size: 1.8rem;
     }
-    
-    .card-navegacao h3 {
-        font-size: 1.3em;
+    .versiculo-card {
+        padding: 12px;
+        margin-bottom: 8px;
+    }
+    .versiculo-card h2 {
+        font-size: 1.5rem;
+        margin-bottom: 5px;
+    }
+    .versiculo-content {
+        padding: 8px;
+        margin: 4px 0;
+    }
+    .texto-versiculo {
+        font-size: 1.2rem;
+    }
+    .botao-ouvir {
+        padding: 5px 15px;
+        font-size: 1rem;
+        margin-top: 5px;
+    }
+    .card-navegacao {
+        height: auto;
+    }
+    .icone-principal {
+        width: 50px;
+        height: 50px;
+        font-size: 1.4rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .card-navegacao,
+    .card-navegacao:hover,
+    .icone-principal,
+    .card-subtitle,
+    .botao-ouvir {
+        transition: none;
+    }
+    .card-navegacao:hover {
+        transform: none;
+    }
+    .card-navegacao:hover .icone-principal {
+        transform: none;
+    }
+    .botao-ouvir:hover {
+        transform: none;
+    }
+}
+
+@media (prefers-contrast: high) {
+    .card-navegacao {
+        border: 2px solid #000;
+    }
+    .card-navegacao:hover {
+        border-width: 3px;
     }
 }

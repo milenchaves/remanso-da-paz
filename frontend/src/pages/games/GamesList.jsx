@@ -25,7 +25,7 @@ export default function GamesList() {
       </div>
       
       <div className="games-grid">
-        {games.map((game) => ( // ← MUDEI AQUI: use 'games' não 'filteredGames'
+        {games.map((game) => ( 
           <div 
             key={game.id}
             className="game-card"
