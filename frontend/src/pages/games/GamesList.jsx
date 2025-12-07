@@ -3,13 +3,8 @@ import "./GamesList.css";
 export default function GamesList() {
   const games = [
     { id: 1, name: "Jogo da Memória", color: "#FF6B6B" },
-    { id: 2, name: "Quebra-Cabeça", color: "#4ECDC4" },
-    { id: 3, name: "Matemática Divertida", color: "#FFD166" },
-    { id: 4, name: "Labirinto", color: "#06D6A0" },
-    { id: 5, name: "Quiz Conhecimentos", color: "#118AB2" },
-    { id: 6, name: "Aventura Espacial", color: "#9D4EDD" },
-    { id: 7, name: "Raciocínio Lógico", color: "#F15BB5" },
-    { id: 8, name: "Palavras Cruzadas", color: "#00BBF9" },
+    { id: 2, name: "Quiz Conhecimentos", color: "#118AB2" },
+    { id: 3, name: "Raciocínio Lógico", color: "#F15BB5" },
   ];
 
   const handleGameClick = (gameName) => {

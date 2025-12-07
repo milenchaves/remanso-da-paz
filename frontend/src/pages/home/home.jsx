@@ -47,7 +47,6 @@ const Home = () => {
       }
 
       const textoLimpo = versiculo.texto.replace(/<[^>]*>/g, '');
-      
       const textoCompleto = `${versiculo.livro}. ${textoLimpo}`;
 
       console.log('Gerando áudio para:', textoCompleto);
@@ -123,21 +122,20 @@ const Home = () => {
             )}
           </div>
           
-          {}
           {!isPlaying ? (
             <button 
               className="botao-ouvir" 
               onClick={ouvirVersiculo}
               disabled={audioLoading || !versiculo}
             >
-              {audioLoading ? '⏳ Carregando áudio...' : '🔊 Ouvir Versículo'}
+              {audioLoading ? 'Carregando áudio...' : 'Ouvir Versículo'}
             </button>
           ) : (
             <button 
               className="botao-ouvir parar" 
               onClick={pararAudio}
             >
-              ⏹️ Parar
+              Parar
             </button>
           )}
         </section>
@@ -153,7 +151,9 @@ const Home = () => {
               if (e.key === 'Enter' || e.key === ' ') alert('Tutoriais em desenvolvimento');
             }}
           >
-            <div className="icone-principal">📚</div>
+            <div className="icone-principal">
+              <img src="/apreender.png" alt="Tutoriais" />
+            </div>
             <h3>Tutoriais</h3>
             <p className="card-subtitle">Aprenda com guias passo a passo</p>
           </div>
@@ -167,7 +167,9 @@ const Home = () => {
               if (e.key === 'Enter' || e.key === ' ') navigate('/games');
             }}
           >
-            <div className="icone-principal">🎮</div>
+            <div className="icone-principal">
+              <img src="/game.png" alt="Jogos" />
+            </div>
             <h3>Jogos</h3>
             <p className="card-subtitle">Divirta-se aprendendo</p>
           </div>
