@@ -1,23 +1,22 @@
-import React, { useEffect, useState } from 'react';
-import './home.css';
+import React, { useEffect, useState, useRef } from 'react';
+import './Home.css';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
-// Importe o arquivo CSS (supondo que o nome seja Home.css ou style.css)
-// import './Home.css'; 
+import { bibleAPI } from '../../services/api';
 
 const Home = () => {
   const navigate = useNavigate();
   const [versiculo, setVersiculo] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-
-  const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+  const [audioLoading, setAudioLoading] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef(null);
 
   const fetchVersiculo = async () => {
     try {
       setLoading(true);
       setError(null);
-      const res = await axios.get(`${API_BASE}/api/versiculo-do-dia`);
+      const res = await bibleAPI.getDailyVerse();
       if (res.data && res.data.sucesso) {
         setVersiculo(res.data.dados);
       } else {
@@ -32,29 +31,87 @@ const Home = () => {
 
   useEffect(() => {
     fetchVersiculo();
-    // Atualiza a cada hora para garantir que, quando o backend trocar, o frontend atualize sozinho
     const interval = setInterval(fetchVersiculo, 60 * 60 * 1000);
     return () => clearInterval(interval);
   }, []);
 
+  const ouvirVersiculo = async () => {
+    if (!versiculo) return;
+
+    setAudioLoading(true);
+
+    try {
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current = null;
+      }
+
+      const textoLimpo = versiculo.texto.replace(/<[^>]*>/g, '');
+      const textoCompleto = `${versiculo.livro}. ${textoLimpo}`;
+
+      console.log('Gerando áudio para:', textoCompleto);
+
+      const response = await fetch('http://localhost:3000/api/text-to-speech', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          text: textoCompleto,
+          voice: 'nova' 
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error('Erro ao gerar áudio');
+      }
+
+      const audioBlob = await response.blob();
+      const audioUrl = URL.createObjectURL(audioBlob);
+      const audio = new Audio(audioUrl);
+      audioRef.current = audio;
+
+      audio.onplay = () => setIsPlaying(true);
+      audio.onended = () => {
+        setIsPlaying(false);
+        URL.revokeObjectURL(audioUrl);
+      };
+      audio.onerror = () => {
+        setIsPlaying(false);
+        alert('Erro ao reproduzir áudio');
+      };
+
+      await audio.play();
+
+    } catch (error) {
+      console.error('Erro ao gerar áudio:', error);
+      alert('Erro ao gerar áudio do versículo. Verifique se o backend está rodando na porta 3000.');
+    } finally {
+      setAudioLoading(false);
+    }
+  };
+
+  const pararAudio = () => {
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+      setIsPlaying(false);
+    }
+  };
+
   return (
     <div className="home-page">
+      <div className="bem-vindo">
+        <h1 className="home-title">Seja bem-vindo!</h1>
+      </div>
       <main className="container">
-        
-        {/* Cabeçalho */}
-        <header className="header">
-          <h1>Remanso da Paz</h1>
-          <p>Bem-vindo! Escolha uma atividade</p>
-        </header>
-
-        {/* Versículo do Dia */}
         <section className="versiculo-card">
           <h2>Versículo do Dia</h2>
           <div className="versiculo-content">
             {loading ? (
               <p className="texto-versiculo">Carregando versículo...</p>
             ) : error ? (
-              <p className="texto-versiculo" style={{ color: 'red' }}>{error}</p>
+              <p className="texto-versiculo error-text">{error}</p>
             ) : versiculo ? (
               <>
                 <div className="texto-versiculo" dangerouslySetInnerHTML={{ __html: versiculo.texto }} />
@@ -64,10 +121,25 @@ const Home = () => {
               <p className="texto-versiculo">Nenhum versículo disponível</p>
             )}
           </div>
-          <button className="botao-ouvir">Ouvir Versículo</button>
+          
+          {!isPlaying ? (
+            <button 
+              className="botao-ouvir" 
+              onClick={ouvirVersiculo}
+              disabled={audioLoading || !versiculo}
+            >
+              {audioLoading ? 'Carregando áudio...' : 'Ouvir Versículo'}
+            </button>
+          ) : (
+            <button 
+              className="botao-ouvir parar" 
+              onClick={pararAudio}
+            >
+              Parar
+            </button>
+          )}
         </section>
 
-        {/* Botões de Navegação */}
         <section className="botoes-navegacao">
           
           {/* Card Tutoriais */}
@@ -82,33 +154,31 @@ const Home = () => {
           >
             {/* Ícone substituindo a imagem azul/roxa */}
             <div className="icone-principal">
-               
+              <img src="/apreender.png" alt="Tutoriais" />
             </div>
             <h3>Tutoriais</h3>
+            <p className="card-subtitle">Aprenda com guias passo a passo</p>
           </div>
 
-          {/* Card Jogos */}
-            <div
-              className="card-navegacao jogos-card"
-              role="button"
-              tabIndex={0}
-              onClick={() => navigate('/games')}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') navigate('/games');
-              }}
-            >
-              {/* Ícone substituindo a imagem roxa/rosa */}
-              <div className="icone-principal">
-
-              </div>
-              <h3>Jogos</h3>
+          <div
+            className="card-navegacao jogos-card"
+            role="button"
+            tabIndex={0}
+            onClick={() => navigate('/games')}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') navigate('/games');
+            }}
+          >
+            <div className="icone-principal">
+              <img src="/game.png" alt="Jogos" />
             </div>
+            <h3>Jogos</h3>
+            <p className="card-subtitle">Divirta-se aprendendo</p>
+          </div>
           
         </section>
         
       </main>
-
-     
     </div>
   );
 };

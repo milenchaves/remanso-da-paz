@@ -4,6 +4,7 @@ require('dotenv').config();
 const bibleRoutes = require('./routes/bibleRoutes');
 const tutorialRoutes = require('./routes/tutorialRoutes');
 const { agendarAtualizacaoDiaria, inicializarVersiculo } = require('./jobs/bibleJob');
+const ttsRoutes = require('./routes/audioRoutes');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -24,7 +25,7 @@ app.get('/', (req, res) => {
     });
 
     app.use('/api', bibleRoutes);
-    app.use('/api', tutorialRoutes);
+    app.use('/api', ttsRoutes);
 
     const iniciarServidor = async () => {
     try {
