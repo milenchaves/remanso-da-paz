@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
 const bibleRoutes = require('./routes/bibleRoutes');
+const tutorialRoutes = require('./routes/tutorialRoutes');
 const { agendarAtualizacaoDiaria, inicializarVersiculo } = require('./jobs/bibleJob');
 const ttsRoutes = require('./routes/audioRoutes');
 

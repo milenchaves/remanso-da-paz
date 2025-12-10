@@ -142,15 +142,17 @@ const Home = () => {
 
         <section className="botoes-navegacao">
           
-          <div 
+          {/* Card Tutoriais */}
+          <div
             className="card-navegacao tutorial-card"
             role="button"
             tabIndex={0}
-            onClick={() => alert('Tutoriais em desenvolvimento')}
+            onClick={() => navigate('/tutorials')}
             onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') alert('Tutoriais em desenvolvimento');
+              if (e.key === 'Enter' || e.key === ' ') navigate('/tutorials');
             }}
           >
+            {/* Ícone substituindo a imagem azul/roxa */}
             <div className="icone-principal">
               <img src="/apreender.png" alt="Tutoriais" />
             </div>

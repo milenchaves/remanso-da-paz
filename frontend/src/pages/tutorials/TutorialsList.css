@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@400..800&display=swap');
+
+.tutorials-page {
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tutorials-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding-top: 1rem;
+}
+
+.tutorials-title {
+  font-size: 3.5rem;
+  color: #4c1d95;
+  text-align: center;
+  margin: 0;
+  font-weight: 900;
+  letter-spacing: 2px;
+  font-family: 'Baloo Paaji 2', cursive, sans-serif;
+}
+
+.tutorials-loading,
+.tutorials-error {
+  text-align: center;
+  padding: 3rem;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.tutorials-error {
+  color: #d32f2f;
+}
+
+.tutorials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  justify-content: center;
+}
+
+.tutorial-card {
+  background: white;
+  border-radius: 24px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 280px;
+}
+
+.tutorial-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.tutorial-card:active {
+  transform: translateY(-2px) scale(0.98);
+}
+
+.tutorial-card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.tutorial-icon-container {
+  width: 96px;
+  height: 96px;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.tutorial-card:hover .tutorial-icon-container {
+  transform: scale(1.1);
+}
+
+.tutorial-icon {
+  width: 48px;
+  height: 48px;
+  stroke-width: 2;
+}
+
+.tutorial-title {
+  font-size: 1.75rem;
+  color: #4c1d95;
+  margin: 0;
+  font-weight: 700;
+  font-family: 'Baloo Paaji 2', cursive, sans-serif;
+  line-height: 1.3;
+}
+
+.tutorial-description {
+  font-size: 1rem;
+  color: #666;
+  margin: 0;
+  line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+  .tutorials-page {
+    padding: 4rem 2rem;
+  }
+
+  .tutorials-title {
+    font-size: 5rem;
+  }
+
+  .tutorials-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+
+  .tutorial-card {
+    padding: 3rem 2rem;
+    min-height: 320px;
+  }
+
+  .tutorial-icon-container {
+    width: 128px;
+    height: 128px;
+  }
+
+  .tutorial-icon {
+    width: 64px;
+    height: 64px;
+  }
+
+  .tutorial-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .tutorials-page {
+    padding: 1.5rem 1rem;
+  }
+
+  .tutorials-title {
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+  }
+
+  .tutorials-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto;
+    gap: 1.5rem;
+  }
+
+  .tutorial-card {
+    min-height: 260px;
+    padding: 1.5rem;
+  }
+
+  .tutorial-icon-container {
+    width: 80px;
+    height: 80px;
+  }
+
+  .tutorial-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .tutorial-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tutorial-card,
+  .tutorial-icon-container {
+    transition: none;
+  }
+
+  .tutorial-card:hover {
+    transform: none;
+  }
+}
+
