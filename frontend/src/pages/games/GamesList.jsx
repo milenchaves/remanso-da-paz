@@ -1,15 +1,23 @@
+import { useNavigate } from "react-router-dom";
 import "./GamesList.css";
 
 export default function GamesList() {
+  const navigate = useNavigate();
   const games = [
     { id: 1, name: "Jogo da Memória", color: "#FF6B6B" },
-    { id: 2, name: "Quiz Conhecimentos", color: "#118AB2" },
+    { id: 2, name: "Quiz de Conhecimentos", color: "#118AB2" },
     { id: 3, name: "Organize a gaveta", color: "#5bf19fff" },
+    { id: 4, name: "Adivinhe o Intruso", color: "#9D4EDD", path: "/games/odd-one-out" },
   ];
 
-  const handleGameClick = (gameName) => {
-    console.log(`Jogo clicado: ${gameName}`);
-    alert(`Em desenvolvimento: ${gameName}`);
+  const handleGameClick = (game) => {
+    console.log(`Jogo clicado:`, game);
+
+    if (game.path) {
+      navigate(game.path);
+    } else {
+      alert(`Em desenvolvimento: ${game.name}`);
+    }
   };
 
   return (
@@ -24,14 +32,14 @@ export default function GamesList() {
           <div 
             key={game.id}
             className="game-card"
-            onClick={() => handleGameClick(game.name)}
+            onClick={() => handleGameClick(game)}
             style={{ '--card-color': game.color }}
             role="button"
             tabIndex="0"
             aria-label={`Jogo ${game.name}`}
             onKeyDown={(e) => {
               if (e.key === 'Enter' || e.key === ' ') {
-                handleGameClick(game.name);
+                handleGameClick(game);
               }
             }}
           >
