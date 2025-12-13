@@ -4,7 +4,7 @@ export default function GamesList() {
   const games = [
     { id: 1, name: "Jogo da Memória", color: "#FF6B6B" },
     { id: 2, name: "Quiz Conhecimentos", color: "#118AB2" },
-    { id: 3, name: "Raciocínio Lógico", color: "#F15BB5" },
+    { id: 3, name: "Organize a gaveta", color: "#5bf19fff" },
   ];
 
   const handleGameClick = (gameName) => {
