@@ -25,6 +25,7 @@ app.get('/', (req, res) => {
     });
 
     app.use('/api', bibleRoutes);
+    app.use('/api', tutorialRoutes);
     app.use('/api', ttsRoutes);
 
     const iniciarServidor = async () => {

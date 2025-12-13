@@ -1,672 +1,316 @@
-@import url('https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@400..800&display=swap');
-
+/* ===== PAGE LAYOUT ===== */
 .tutorial-detail-page {
-  min-height: 100vh;
-  padding: 2rem 1rem;
-  max-width: 900px;
-  margin: 0 auto;
+  width: 100%;
+  height: 80vh; /* MUDANÇA: Fixa a altura na tela inteira */
+  background: #f9fafb;
+  padding: 10px; /* Reduzi o padding para ganhar espaço */
   display: flex;
   flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  overflow-y: auto; /* A barra de rolagem aparecerá aqui agora */
 }
 
-.tutorial-view-container {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.tutorial-view-content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
+/* ===== BACK BUTTON ===== */
 .back-button {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  background: white;
-  border: 2px solid #e5e7eb;
-  border-radius: 12px;
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #4c1d95;
+  margin-bottom: 16px;
+  background: none;
+  border: none;
+  color: #374151;
+  font-size: 14px; /* Reduzido de 16px */
   cursor: pointer;
-  transition: all 0.2s ease;
-  margin-bottom: 2rem;
+  gap: 6px;
+  transition: 0.2s;
 }
 
 .back-button:hover {
-  background: #f3f4f6;
-  border-color: #4c1d95;
-  transform: translateX(-4px);
-}
-
-.back-button:active {
+  color: #111827;
   transform: translateX(-2px);
 }
 
 .back-icon {
-  width: 20px;
-  height: 20px;
+  width: 18px; /* Reduzido de 20px */
+  height: 18px;
 }
 
-.tutorial-detail-loading,
-.tutorial-detail-error {
-  text-align: center;
-  padding: 3rem;
-  font-size: 1.2rem;
-  color: #666;
+/* ===== MAIN CONTAINER ===== */
+.tutorial-view-container {
+  width: 100%;
+  max-width: 550px; /* Levemente menor */
+  height: auto;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px; /* Reduzi de 24px */
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Reduzi drasticamente de 24px para juntar os itens */
+  
+  /* Margem extra no final para garantir que o scroll vá até o último botão */
 }
 
-.tutorial-detail-error {
-  color: #d32f2f;
-}
-
+/* ===== HEADER FOR INTRO ===== */
 .tutorial-detail-header {
   text-align: center;
-  margin-bottom: 3rem;
-  padding: 2rem 0;
 }
 
 .tutorial-detail-icon-container {
-  width: 120px;
-  height: 120px;
-  border-radius: 30px;
+  width: 64px; /* Reduzido de 82px */
+  height: 64px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 1.5rem;
-  transition: transform 0.3s ease;
+  margin: 0 auto 12px;
 }
 
 .tutorial-detail-icon {
-  width: 60px;
-  height: 60px;
-  stroke-width: 2;
+  width: 32px; /* Reduzido de 44px */
+  height: 32px;
 }
 
 .tutorial-detail-title {
-  font-size: 2.5rem;
-  color: #4c1d95;
-  margin: 0 0 1rem 0;
+  font-size: 22px; /* Reduzido de 28px */
   font-weight: 700;
-  font-family: 'Baloo Paaji 2', cursive, sans-serif;
-  line-height: 1.2;
+  color: #111827;
+  margin-bottom: 8px;
 }
 
 .tutorial-detail-description {
-  font-size: 1.2rem;
-  color: #666;
-  margin: 0;
-  line-height: 1.6;
+  font-size: 14px; /* Reduzido de 16px */
+  color: #4b5563;
 }
 
+/* ===== INTRO TEXT ===== */
 .tutorial-introduction {
-  background: linear-gradient(135deg, #f8f9ff 0%, #f0f4ff 100%);
-  border-radius: 20px;
-  padding: 2rem;
-  margin: 2rem 0 3rem 0;
-  border-left: 4px solid #4c1d95;
+  margin-top: 16px;
 }
 
 .introduction-text {
-  font-size: 1.15rem;
+  font-size: 15px; /* Reduzido de 17px */
+  line-height: 1.5;
   color: #374151;
-  margin: 0;
-  line-height: 1.8;
-  text-align: justify;
 }
-
-.tutorial-conclusion {
-  background: linear-gradient(135deg, #fef3f2 0%, #fff7ed 100%);
-  border-radius: 20px;
-  padding: 2rem;
-  margin: 3rem 0 2rem 0;
-  border-left: 4px solid #f59e0b;
-}
-
-.conclusion-text {
-  font-size: 1.15rem;
-  color: #374151;
-  margin: 0;
-  line-height: 1.8;
-  text-align: justify;
-  font-weight: 500;
-}
-
-.tutorial-steps {
-  margin-top: 3rem;
-}
-
-.steps-title {
-  font-size: 2rem;
-  color: #4c1d95;
-  margin: 0 0 2rem 0;
-  font-weight: 700;
-  font-family: 'Baloo Paaji 2', cursive, sans-serif;
-  text-align: center;
-}
-
-.steps-container {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.step-card {
-  background: white;
-  border-radius: 20px;
-  padding: 2rem;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  display: flex;
-  gap: 1.5rem;
-  align-items: flex-start;
-  transition: all 0.3s ease;
-}
-
-.step-card:hover {
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
-  transform: translateY(-2px);
-}
-
-.step-number {
-  min-width: 50px;
-  height: 50px;
-  background: linear-gradient(135deg, #4c1d95 0%, #6d28d9 100%);
-  color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  font-weight: 700;
-  flex-shrink: 0;
-}
-
-.step-content {
-  flex: 1;
-}
-
-.step-title {
-  font-size: 1.5rem;
-  color: #1f2937;
-  margin: 0 0 1rem 0;
-  font-weight: 700;
-  line-height: 1.3;
-}
+/* ===== STEP VIEW ===== */
+/* (Mantenha as classes de texto como estavam, altere apenas a imagem abaixo) */
 
 .step-image-container {
-  width: 100%;
-  margin: 1rem 0;
-  border-radius: 12px;
+  margin-top: 12px;
+  border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8fafc;
+  border: 1px solid #e5e7eb;
+  
+  /* MUDANÇA CRÍTICA: Reduzi de 300px para 200px */
+  height: 200px; 
 }
 
 .step-image {
-  width: 100%;
+  width: auto;
   height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 6px;
   display: block;
-  object-fit: cover;
+  object-fit: contain; 
 }
 
 .step-image-placeholder {
-  width: 100%;
-  min-height: 200px;
-  background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
-  border: 2px dashed #9ca3af;
-  border-radius: 12px;
+  margin-top: 12px;
+  background: #f3f4f6;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  color: #6b7280;
+  font-size: 13px;
+  
+  /* MUDANÇA CRÍTICA: Reduzi para acompanhar o container */
+  height: 200px; 
+  
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 1rem 0;
 }
 
-.placeholder-text {
-  color: #6b7280;
-  font-size: 1rem;
-  font-style: italic;
-  text-align: center;
-  padding: 1rem;
-}
-
-.step-description {
-  font-size: 1.1rem;
-  color: #4b5563;
-  margin: 1rem 0 0 0;
-  line-height: 1.6;
-}
-
-@media (min-width: 768px) {
-  .tutorial-detail-page {
-    padding: 3rem 2rem;
-  }
-
-  .tutorial-detail-icon-container {
-    width: 160px;
-    height: 160px;
-  }
-
-  .tutorial-detail-icon {
-    width: 80px;
-    height: 80px;
-  }
-
-  .tutorial-detail-title {
-    font-size: 3.5rem;
-  }
-
-  .tutorial-detail-description {
-    font-size: 1.4rem;
-  }
-
-  .tutorial-introduction {
-    padding: 2.5rem;
-  }
-
-  .introduction-text {
-    font-size: 1.25rem;
-  }
-
-  .tutorial-conclusion {
-    padding: 2.5rem;
-  }
-
-  .conclusion-text {
-    font-size: 1.25rem;
-  }
-
-  .steps-title {
-    font-size: 2.5rem;
-  }
-
-  .step-image-placeholder {
-    min-height: 250px;
-  }
-
-  .step-card {
-    padding: 2.5rem;
-  }
-
-  .step-number {
-    min-width: 60px;
-    height: 60px;
-    font-size: 1.75rem;
-  }
-
-  .step-title {
-    font-size: 1.75rem;
-  }
-
-  .step-description {
-    font-size: 1.2rem;
-  }
-}
-
-@media (max-width: 767px) {
-  .tutorial-detail-page {
-    padding: 1.5rem 1rem;
-  }
-
-  .back-button {
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-  }
-
-  .tutorial-detail-title {
-    font-size: 2rem;
-  }
-
-  .tutorial-detail-description {
-    font-size: 1.1rem;
-  }
-
-  .tutorial-introduction {
-    padding: 1.5rem;
-    margin: 1.5rem 0 2rem 0;
-  }
-
-  .introduction-text {
-    font-size: 1rem;
-  }
-
-  .tutorial-conclusion {
-    padding: 1.5rem;
-    margin: 2rem 0 1.5rem 0;
-  }
-
-  .conclusion-text {
-    font-size: 1rem;
-  }
-
-  .steps-title {
-    font-size: 1.75rem;
-  }
-
-  .step-image-placeholder {
-    min-height: 150px;
-  }
-
-  .step-card {
-    padding: 1.5rem;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .step-number {
-    margin-bottom: 0.5rem;
-  }
-}
-
-/* Controles de navegação e áudio */
+/* ===== CONTROLS ===== */
 .tutorial-controls {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  margin-top: 2rem;
-  padding-top: 2rem;
-  border-top: 2px solid #e5e7eb;
+  gap: 16px;
 }
 
+/* ===== LISTEN BUTTON ===== */
 .listen-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-  background: linear-gradient(135deg, #4c1d95 0%, #6d28d9 100%);
+  width: 100%;
+  background: #2563eb;
   color: white;
+  padding: 10px; /* Reduzido de 14px */
   border: none;
-  border-radius: 16px;
-  padding: 1rem 2rem;
-  font-size: 1.1rem;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px; /* Reduzido de 17px */
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(76, 29, 149, 0.3);
-  width: 100%;
-  max-width: 300px;
-  margin: 0 auto;
+  transition: 0.2s;
 }
 
 .listen-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(76, 29, 149, 0.4);
-}
-
-.listen-button:active {
-  transform: translateY(0);
+  background: #1e40af;
 }
 
 .listen-icon {
-  width: 24px;
-  height: 24px;
+  width: 18px;
+  height: 18px;
 }
-
+/* ===== NAVIGATION ===== */
 .navigation-buttons {
   display: flex;
+  flex-direction: row; /* MUDANÇA: Alinha itens na horizontal */
+  gap: 12px;
   align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  flex-wrap: wrap;
+  justify-content: space-between; /* Botões nas pontas, indicadores no meio */
+  width: 100%; /* Garante que o container ocupe a largura total */
 }
 
 .nav-button {
+  background: #f3f4f6;
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: none;
+  font-size: 14px;
+  color: #374151;
+  cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  background: white;
-  border: 2px solid #4c1d95;
-  border-radius: 12px;
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #4c1d95;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  min-width: 120px;
-  justify-content: center;
+  gap: 8px;
+  transition: 0.2s;
+  font-weight: 500;
+  white-space: nowrap; /* Evita que o texto "Próximo" quebre linha */
+  flex-shrink: 0; /* Garante que os botões não encolham demais */
 }
 
 .nav-button:hover:not(:disabled) {
-  background: #4c1d95;
-  color: white;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(76, 29, 149, 0.3);
-}
-
-.nav-button:active:not(:disabled) {
-  transform: translateY(0);
+  background: #e5e7eb;
 }
 
 .nav-button:disabled {
   opacity: 0.4;
   cursor: not-allowed;
-  border-color: #d1d5db;
-  color: #9ca3af;
 }
 
 .nav-icon {
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
 }
 
+/* ===== STEP INDICATOR ===== */
 .step-indicator {
   display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  flex: 1;
-  justify-content: center;
+  gap: 4px; /* Reduzi levemente o gap para caber melhor entre os botões */
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0; /* Removido pois agora está centralizado verticalmente */
+  flex: 1; /* Ocupa todo o espaço disponível no centro */
+  padding: 0 8px; /* Margem de segurança interna */
 }
 
 .step-indicator span {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
   background: #e5e7eb;
-  color: #6b7280;
-  font-weight: 600;
-  font-size: 0.9rem;
-  transition: all 0.3s ease;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  color: #374151;
+  transition: 0.2s;
+  cursor: default; /* Opcional: indica que não é clicável (baseado no seu JSX) */
+  white-space: nowrap;
 }
 
 .step-indicator span.active {
-  background: linear-gradient(135deg, #4c1d95 0%, #6d28d9 100%);
+  background: #2563eb;
   color: white;
-  transform: scale(1.1);
-  box-shadow: 0 4px 12px rgba(76, 29, 149, 0.3);
+  font-weight: 600;
 }
-
-/* Estilos para visualização de passo único */
+/* ===== STEP VIEW ===== */
 .step-view-header {
-  text-align: center;
-  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .step-number-large {
-  width: 80px;
-  height: 80px;
-  background: linear-gradient(135deg, #4c1d95 0%, #6d28d9 100%);
-  color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin: 0 auto 1.5rem;
-  box-shadow: 0 8px 20px rgba(76, 29, 149, 0.3);
+  font-size: 24px;
+  font-weight: 800;
+  color: #2563eb;
 }
 
 .step-title-large {
-  font-size: 2rem;
-  color: #1f2937;
-  margin: 0;
+  font-size: 18px;
   font-weight: 700;
-  line-height: 1.3;
-  font-family: 'Baloo Paaji 2', cursive, sans-serif;
+  color: #111827;
+}
+
+/* Container da imagem ajustado */
+.step-image-container {
+  margin-top: 16px;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 100%;
+  /* Adicionado: Centraliza a imagem se ela for mais estreita que o container */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Opcional: cor de fundo sutil e borda para delimitar a área da imagem */
+  background-color: #f8fafc;
+  border: 1px solid #e5e7eb;
+  /* Define uma altura fixa para o container da imagem */
+  height: 300px; 
+}
+
+/* Imagem ajustada */
+.step-image {
+  /* MUDANÇA CRÍTICA: */
+  width: auto; /* Não força mais 100% de largura */
+  height: auto; /* Deixa a altura se ajustar */
+  
+  /* Garante que a imagem nunca ultrapasse as dimensões do container */
+  max-width: 100%;
+  max-height: 100%;
+  
+  border-radius: 6px; /* Raio um pouco menor para caber dentro da borda do container */
+  display: block;
+  
+  /* MUDANÇA CRÍTICA: garante que a imagem caiba inteira sem cortar e sem distorcer */
+  object-fit: contain; 
+}
+
+.step-image-placeholder {
+  margin-top: 16px;
+  background: #f3f4f6;
+  border-radius: 8px;
+  padding: 30px;
+  text-align: center;
+  color: #6b7280;
+  font-size: 13px;
+  /* Adicionado para manter consistência de altura com as imagens reais */
+  height: 300px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .step-description-large {
-  background: white;
-  border-radius: 20px;
-  padding: 2rem;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  margin-top: 2rem;
-}
-
-.step-description-large p {
-  font-size: 1.2rem;
-  color: #4b5563;
-  margin: 0;
-  line-height: 1.8;
-  text-align: justify;
-}
-
-.tutorial-conclusion-view {
-  text-align: center;
-  background: linear-gradient(135deg, #fef3f2 0%, #fff7ed 100%);
-  border-radius: 20px;
-  padding: 3rem 2rem;
-  border-left: 4px solid #f59e0b;
-}
-
-.conclusion-title {
-  font-size: 2.5rem;
-  color: #4c1d95;
-  margin: 0 0 2rem 0;
-  font-weight: 700;
-  font-family: 'Baloo Paaji 2', cursive, sans-serif;
-}
-
-.conclusion-text-large {
-  font-size: 1.3rem;
+  margin-top: 16px;
+  font-size: 15px;
+  line-height: 1.5;
   color: #374151;
-  margin: 0;
-  line-height: 1.8;
-  text-align: justify;
-  font-weight: 500;
 }
-
-@media (min-width: 768px) {
-  .tutorial-detail-page {
-    padding: 3rem 2rem;
-  }
-
-  .step-number-large {
-    width: 100px;
-    height: 100px;
-    font-size: 3rem;
-  }
-
-  .step-title-large {
-    font-size: 2.5rem;
-  }
-
-  .step-description-large {
-    padding: 2.5rem;
-  }
-
-  .step-description-large p {
-    font-size: 1.3rem;
-  }
-
-  .conclusion-title {
-    font-size: 3rem;
-  }
-
-  .conclusion-text-large {
-    font-size: 1.4rem;
-  }
-
-  .listen-button {
-    padding: 1.25rem 2.5rem;
-    font-size: 1.2rem;
-  }
-
-  .nav-button {
-    padding: 1rem 2rem;
-    font-size: 1.1rem;
-    min-width: 140px;
-  }
-
-  .step-indicator span {
-    width: 45px;
-    height: 45px;
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 767px) {
-  .tutorial-detail-page {
-    padding: 1.5rem 1rem;
-  }
-
-  .step-number-large {
-    width: 70px;
-    height: 70px;
-    font-size: 2rem;
-  }
-
-  .step-title-large {
-    font-size: 1.75rem;
-  }
-
-  .step-description-large {
-    padding: 1.5rem;
-  }
-
-  .step-description-large p {
-    font-size: 1.1rem;
-  }
-
-  .conclusion-title {
-    font-size: 2rem;
-  }
-
-  .conclusion-text-large {
-    font-size: 1.2rem;
-  }
-
-  .navigation-buttons {
-    flex-direction: column;
-  }
-
-  .nav-button {
-    width: 100%;
-    max-width: 200px;
-  }
-
-  .step-indicator {
-    order: -1;
-    width: 100%;
-    margin-bottom: 1rem;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .back-button,
-  .step-card,
-  .tutorial-detail-icon-container,
-  .listen-button,
-  .nav-button,
-  .step-indicator span {
-    transition: none;
-  }
-
-  .back-button:hover,
-  .step-card:hover,
-  .listen-button:hover,
-  .nav-button:hover {
-    transform: none;
-  }
-}
-

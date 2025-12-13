@@ -2,18 +2,18 @@ import { useEffect, useState, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './TutorialDetail.css';
-import { 
-  ArrowLeft, 
-  Phone, 
-  MessageSquare, 
-  Camera, 
-  Volume2, 
-  Music, 
-  Mic, 
-  Image, 
-  Video, 
-  Search, 
-  Sparkles, 
+import {
+  ArrowLeft,
+  Phone,
+  MessageSquare,
+  Camera,
+  Volume2,
+  Music,
+  Mic,
+  Image,
+  Video,
+  Search,
+  Sparkles,
   Images,
   Play,
   Pause,
@@ -93,23 +93,23 @@ export default function TutorialDetail() {
     // Inicializar síntese de voz e buscar vozes mais naturais
     if ('speechSynthesis' in window) {
       synthRef.current = window.speechSynthesis;
-      
+
       // Função para carregar e selecionar a melhor voz
       const loadVoices = () => {
         const voices = synthRef.current.getVoices();
-        
+
         // Filtrar apenas vozes em português brasileiro
-        const ptBRVoices = voices.filter(voice => 
-          voice.lang === 'pt-BR' || 
+        const ptBRVoices = voices.filter(voice =>
+          voice.lang === 'pt-BR' ||
           voice.lang.startsWith('pt-BR') ||
           (voice.lang === 'pt' && voice.name.toLowerCase().includes('brazil'))
         );
-        
+
         let selectedVoice = null;
-        
+
         if (ptBRVoices.length === 0) {
           // Se não houver vozes pt-BR, usar qualquer voz em português
-          const ptVoices = voices.filter(voice => 
+          const ptVoices = voices.filter(voice =>
             voice.lang === 'pt' || voice.lang.startsWith('pt-')
           );
           if (ptVoices.length > 0) {
@@ -118,10 +118,10 @@ export default function TutorialDetail() {
         } else {
           // Priorizar vozes mais naturais (geralmente vozes femininas e com nomes específicos)
           const preferredNames = ['maria', 'francisca', 'heloisa', 'google', 'neural', 'premium'];
-          const naturalVoices = ptBRVoices.filter(voice => 
+          const naturalVoices = ptBRVoices.filter(voice =>
             preferredNames.some(name => voice.name.toLowerCase().includes(name))
           );
-          
+
           // Se encontrou vozes preferidas, usar a primeira
           if (naturalVoices.length > 0) {
             selectedVoice = naturalVoices[0];
@@ -129,12 +129,12 @@ export default function TutorialDetail() {
             // Caso contrário, preferir vozes femininas (geralmente mais naturais)
             const femaleVoices = ptBRVoices.filter(voice => {
               const name = voice.name.toLowerCase();
-              return name.includes('maria') || 
-                     name.includes('francisca') || 
-                     name.includes('heloisa') ||
-                     name.includes('zira');
+              return name.includes('maria') ||
+                name.includes('francisca') ||
+                name.includes('heloisa') ||
+                name.includes('zira');
             });
-            
+
             if (femaleVoices.length > 0) {
               selectedVoice = femaleVoices[0];
             } else {
@@ -143,20 +143,20 @@ export default function TutorialDetail() {
             }
           }
         }
-        
+
         // Se ainda não encontrou, usar a primeira voz disponível
         if (!selectedVoice && voices.length > 0) {
           selectedVoice = voices[0];
         }
-        
+
         voiceRef.current = selectedVoice;
-        
+
         voiceRef.current = selectedVoice;
       };
-      
+
       // Carregar vozes (pode ser assíncrono em alguns navegadores)
       loadVoices();
-      
+
       // Alguns navegadores carregam vozes de forma assíncrona
       if (synthRef.current.onvoiceschanged !== undefined) {
         synthRef.current.onvoiceschanged = loadVoices;
@@ -183,21 +183,21 @@ export default function TutorialDetail() {
     // Aguardar um pouco para garantir que a voz foi carregada
     setTimeout(() => {
       const utterance = new SpeechSynthesisUtterance(text);
-      
+
       // Configurar idioma
       utterance.lang = 'pt-BR';
-      
+
       // Ajustar parâmetros para voz mais natural e agradável
       utterance.rate = 0.8; // Velocidade mais lenta (mais natural e fácil de entender)
       utterance.pitch = 1.05; // Tom ligeiramente mais alto (mais agradável, menos robótico)
       utterance.volume = 1;
-      
+
       // Usar a voz selecionada se disponível
       if (voiceRef.current) {
         utterance.voice = voiceRef.current;
         utterance.lang = voiceRef.current.lang;
       }
-      
+
       utterance.text = text;
 
       utterance.onstart = () => setIsSpeaking(true);
@@ -222,7 +222,7 @@ export default function TutorialDetail() {
     }
 
     let textToSpeak = '';
-    
+
     if (currentView === 'intro' && tutorial?.introduction) {
       textToSpeak = `${tutorial.title}. ${tutorial.description || ''} ${tutorial.introduction}`.trim();
     } else if (currentView.startsWith('step-')) {
@@ -340,9 +340,9 @@ export default function TutorialDetail() {
     viewContent = (
       <div className="tutorial-view-content">
         <div className="tutorial-detail-header">
-          <div 
+          <div
             className="tutorial-detail-icon-container"
-            style={{ 
+            style={{
               backgroundColor: colors.bg,
               color: colors.text
             }}
@@ -371,8 +371,8 @@ export default function TutorialDetail() {
           </div>
           {currentStep.image && !imageError ? (
             <div className="step-image-container">
-              <img 
-                src={currentStep.image} 
+              <img
+                src={currentStep.image}
                 alt={`Passo ${currentStep.step}: ${currentStep.title}`}
                 className="step-image"
                 onError={() => {
@@ -385,8 +385,8 @@ export default function TutorialDetail() {
           ) : (
             <div className="step-image-placeholder">
               <span className="placeholder-text">
-                {currentStep.image && imageError 
-                  ? `Imagem não encontrada: ${currentStep.image}` 
+                {currentStep.image && imageError
+                  ? `Imagem não encontrada: ${currentStep.image}`
                   : `Imagem do passo ${currentStep.step}`}
               </span>
             </div>
@@ -419,7 +419,7 @@ export default function TutorialDetail() {
         {viewContent}
 
         <div className="tutorial-controls">
-          <button 
+          <button
             onClick={handleListen}
             className="listen-button"
             aria-label={isSpeaking ? 'Parar áudio' : 'Ouvir texto'}
@@ -438,7 +438,7 @@ export default function TutorialDetail() {
           </button>
 
           <div className="navigation-buttons">
-            <button 
+            <button
               onClick={handlePrevious}
               disabled={!canGoPrevious()}
               className="nav-button nav-button-prev"
@@ -450,7 +450,7 @@ export default function TutorialDetail() {
 
             <div className="step-indicator">
               {tutorial.introduction && (
-                <span 
+                <span
                   className={currentView === 'intro' ? 'active' : ''}
                   title="Introdução"
                 >
@@ -458,8 +458,8 @@ export default function TutorialDetail() {
                 </span>
               )}
               {tutorial.steps?.map((step, index) => (
-                <span 
-                  key={index} 
+                <span
+                  key={index}
                   className={currentView === `step-${index}` ? 'active' : ''}
                   title={`Passo ${step.step}: ${step.title}`}
                 >
@@ -467,7 +467,7 @@ export default function TutorialDetail() {
                 </span>
               ))}
               {tutorial.conclusion && (
-                <span 
+                <span
                   className={currentView === 'conclusion' ? 'active' : ''}
                   title="Conclusão"
                 >
@@ -476,7 +476,7 @@ export default function TutorialDetail() {
               )}
             </div>
 
-            <button 
+            <button
               onClick={handleNext}
               disabled={!canGoNext()}
               className="nav-button nav-button-next"
