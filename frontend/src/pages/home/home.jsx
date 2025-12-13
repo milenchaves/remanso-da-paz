@@ -141,40 +141,37 @@ const Home = () => {
         </section>
 
         <section className="botoes-navegacao">
-          
-          {/* Card Tutoriais */}
-          <div
-            className="card-navegacao tutorial-card"
-            role="button"
-            tabIndex={0}
-            onClick={() => navigate('/tutorials')}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') navigate('/tutorials');
-            }}
+        
+          <div className="card-navegacao tutorial-card"
+          role="button"
+              tabIndex={0}
+              onClick={() => navigate('/games')}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') navigate('/tutorials');
+              }}
           >
-            {/* Ícone substituindo a imagem azul/roxa */}
+
             <div className="icone-principal">
-              <img src="/apreender.png" alt="Tutoriais" />
+
             </div>
             <h3>Tutoriais</h3>
             <p className="card-subtitle">Aprenda com guias passo a passo</p>
           </div>
 
-          <div
-            className="card-navegacao jogos-card"
-            role="button"
-            tabIndex={0}
-            onClick={() => navigate('/games')}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') navigate('/games');
-            }}
-          >
-            <div className="icone-principal">
-              <img src="/game.png" alt="Jogos" />
+            <div
+              className="card-navegacao jogos-card"
+              role="button"
+              tabIndex={0}
+              onClick={() => navigate('/games')}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') navigate('/games');
+              }}
+            >
+              <div className="icone-principal">
+
+              </div>
+              <h3>Jogos</h3>
             </div>
-            <h3>Jogos</h3>
-            <p className="card-subtitle">Divirta-se aprendendo</p>
-          </div>
           
         </section>
         
