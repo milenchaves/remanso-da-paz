@@ -1,40 +1,62 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@400..800&display=swap');
 
+/* ===== PAGE CONTAINER ===== */
 .tutorials-page {
-  min-height: 100vh;
-  padding: 2rem 1rem;
-  max-width: 1100px;
-  margin: 0 auto;
+  height: 100vh;
+  width: 100%;
+  overflow-y: auto; 
+  background: #f9fafb; /* Garante fundo em toda a tela */
+  
+  /* AJUSTE DO SCROLL */
+  padding: 1rem; 
+  padding-right: 1.5rem; /* Um pouco mais de espaço na direita para o scroll não colar */
+  box-sizing: border-box; 
+  
+  /* REMOVIDO: max-width e margin daqui. 
+     Isso joga a barra de rolagem para a borda da janela */
 }
 
+/* ===== HEADER ===== */
 .tutorials-header {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   padding-top: 0.5rem;
+  
+  /* ADICIONADO: Centraliza o conteúdo, não a página inteira */
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .tutorials-title {
-  font-size: 2.8rem;
+  font-size: 2rem; 
   color: #4c1d95;
   margin: 0;
   font-weight: 800;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   font-family: 'Baloo Paaji 2', cursive, sans-serif;
+  line-height: 1.1;
 }
 
-/* GRID AJUSTADO */
+/* ===== GRID ===== */
 .tutorials-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
   width: 100%;
+  padding-bottom: 40px;
+  
+  /* ADICIONADO: Centraliza o grid e mantém os cards longe das bordas em telas grandes */
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* CARD MENOR E MAIS LEVE */
+/* ===== CARD ===== */
 .tutorial-card {
   background: white;
-  border-radius: 18px;
-  padding: 1.3rem 1rem;
+  border-radius: 16px;
+  padding: 1rem;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
   transition: all 0.25s ease;
   cursor: pointer;
@@ -43,7 +65,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: auto;
+  height: 100%; 
 }
 
 .tutorial-card:hover {
@@ -56,28 +78,29 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 0.8rem;
+  width: 100%;
 }
 
-/* ÍCONES MAIS PEQUENOS */
+/* ===== ÍCONES ===== */
 .tutorial-icon-container {
-  width: 70px;
-  height: 70px;
-  border-radius: 16px;
+  width: 50px; 
+  height: 50px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .tutorial-icon {
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
   stroke-width: 2;
 }
 
-/* TÍTULO MENOR */
+/* ===== TEXTOS DO CARD ===== */
 .tutorial-title {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   color: #4c1d95;
   margin: 0;
   font-weight: 700;
@@ -86,64 +109,51 @@
 }
 
 .tutorial-description {
-  font-size: 0.9rem;
-  color: #555;
+  font-size: 0.85rem;
+  color: #666;
   margin: 0;
-  line-height: 1.4;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-/* TABLET */
+/* ===== TABLET/DESKTOP TWEAKS ===== */
 @media (min-width: 768px) {
   .tutorials-page {
-    padding: 3rem 1rem;
+    padding: 2rem;
+    padding-right: 2.5rem; /* Mais espaço para o scroll no desktop */
   }
 
   .tutorials-title {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
   }
-
-  .tutorial-grid {
-    gap: 2rem;
-  }
-
-  .tutorial-card {
-    padding: 1.8rem 1.4rem;
+  
+  .tutorials-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
   }
 
   .tutorial-icon-container {
-    width: 80px;
-    height: 80px;
-  }
-
-  .tutorial-icon {
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
   }
 }
 
-/* MOBILE */
+/* ===== MOBILE TWEAKS ===== */
 @media (max-width: 767px) {
-  .tutorials-title {
-    font-size: 2.2rem;
-  }
-
   .tutorials-grid {
-    grid-template-columns: 1fr;
-    max-width: 380px;
-    margin: 0 auto;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 0.8rem;
   }
-
+  
   .tutorial-card {
-    padding: 1.3rem;
+    padding: 0.8rem;
   }
-
-  .tutorial-icon-container {
-    width: 65px;
-    height: 65px;
-  }
-
-  .tutorial-title {
-    font-size: 1.2rem;
+  
+  .tutorials-title {
+    font-size: 1.8rem;
   }
 }
 
