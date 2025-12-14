@@ -5,10 +5,6 @@ import {
   Video, Search, Sparkles, Images 
 } from 'lucide-react';
 
-useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [selectedThemeIndex]);
-
 const iconMap = {
   phone: Phone, 
   message: MessageSquare, 

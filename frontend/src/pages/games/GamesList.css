@@ -13,28 +13,6 @@
 
 .games-title {
   font-size: 3.5rem;
-  color: var(--cor-texto-principal);
-  text-align: center;
-  margin: 0 0 0.5rem 0;
-  font-weight: 900;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-}
-
-.games-title {
-  font-size: 3.5rem;
-  color: var(--cor-texto-principal);
-  text-align: center;
-  margin: 0 0 0.5rem 0;
-  font-weight: 900;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-}
-
-.games-title {
-  font-size: 3.5rem;
   text-align: center;
   margin: 0 0 0.5rem 0;
   font-weight: 900;
@@ -56,9 +34,9 @@
 
 .games-grid {
   display: grid;
+  width: 100%;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: clamp(0.75rem, 2vw, 2rem);
-  justify-content: center;
   margin-bottom: 3rem;
 }
 
@@ -180,7 +158,7 @@
   .games-grid {
     grid-template-columns: repeat(3, 1fr);
   }
-  
+
   .games-title {
     font-size: 3rem;
   }
@@ -191,7 +169,7 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
   }
-  
+
   .games-title {
     font-size: 2.8rem;
   }
@@ -201,39 +179,39 @@
   .games-page {
     padding: 1.5rem;
   }
-  
+
   .games-header {
     margin-bottom: 2rem;
   }
-  
+
   .games-title {
     font-size: 2.2rem;
     letter-spacing: 2px;
   }
-  
+
   .games-subtitle {
     font-size: 1.2rem;
   }
-  
+
   .games-grid {
     grid-template-columns: 1fr;
     max-width: 320px;
     margin: 0 auto 2rem;
   }
-  
+
   .game-card {
     height: 250px;
   }
-  
+
   .game-icon {
     width: 85px;
     height: 85px;
   }
-  
+
   .game-number {
     font-size: 2rem;
   }
-  
+
   .game-name {
     font-size: 1.3rem;
   }
@@ -243,39 +221,39 @@
   .games-page {
     padding: 1rem;
   }
-  
+
   .games-title {
     font-size: 1.8rem;
   }
-  
+
   .game-card {
     padding: 1.2rem;
     height: 240px;
   }
-  
+
   .games-grid {
     max-width: 280px;
   }
 }
 
-@media (max-width: 360px) {  
+@media (max-width: 360px) {
   .games-grid {
     max-width: 260px;
   }
-  
+
   .game-card {
     height: 230px;
   }
-  
+
   .game-icon {
     width: 75px;
     height: 75px;
   }
-  
+
   .game-number {
     font-size: 1.8rem;
   }
-  
+
   .game-name {
     font-size: 1.2rem;
   }
@@ -288,7 +266,7 @@
   .game-hint {
     transition: none;
   }
-  
+
   .game-card:hover {
     transform: none;
   }
@@ -298,7 +276,7 @@
   .game-card {
     border: 2px solid #000;
   }
-  
+
   .game-card:hover {
     border-width: 3px;
   }
