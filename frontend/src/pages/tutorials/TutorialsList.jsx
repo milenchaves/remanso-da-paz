@@ -57,7 +57,8 @@ export default function TutorialsList() {
   return (
     <div className="tutorials-page">
       <div className="tutorials-header">
-        <h1 className="tutorials-title">Tutoriais</h1>
+        <h1 className="tutorials-title">TUTORIAIS</h1>
+        <p className="tutorials-subtitle">Escolha um tutorial para começar</p>
       </div>
 
       <div className="tutorials-grid">

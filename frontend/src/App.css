@@ -18,7 +18,7 @@ html, body {
 }
 
 .content {
-  padding-top: 56px;
+  padding-top: 0.5rem;
   padding-bottom: 70px;
   min-height: 100vh;
 }
@@ -46,6 +46,6 @@ h3 { font-size: clamp(1rem, 2.2vw, 1.25rem); }
 
 @media (max-width: 767px) {
   .content {
-    padding-top: 48px;
+    padding-top: 0.5rem;
   }
 }
