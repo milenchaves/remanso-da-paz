@@ -3,31 +3,14 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './TutorialsList.css';
 import { 
-  Phone, 
-  MessageSquare, 
-  Camera, 
-  Volume2, 
-  Music, 
-  Mic, 
-  Image, 
-  Video, 
-  Search, 
-  Sparkles, 
-  Images 
+  Phone, MessageSquare, Camera, Volume2, Music, Mic, Image, 
+  Video, Search, Sparkles, Images 
 } from 'lucide-react';
 
 const iconMap = {
-  phone: Phone,
-  message: MessageSquare,
-  camera: Camera,
-  volume: Volume2,
-  music: Music,
-  mic: Mic,
-  image: Image,
-  video: Video,
-  search: Search,
-  bot: Sparkles, // Usando Sparkles como alternativa ao Bot
-  images: Images
+  phone: Phone, message: MessageSquare, camera: Camera, volume: Volume2,
+  music: Music, mic: Mic, image: Image, video: Video, search: Search,
+  bot: Sparkles, images: Images
 };
 
 const colorMap = {
@@ -63,29 +46,13 @@ export default function TutorialsList() {
         setLoading(false);
       }
     };
-
     fetchTutorials();
   }, [API_BASE]);
 
-  const handleTutorialClick = (id) => {
-    navigate(`/tutorials/${id}`);
-  };
+  const handleTutorialClick = (id) => navigate(`/tutorials/${id}`);
 
-  if (loading) {
-    return (
-      <div className="tutorials-page">
-        <div className="tutorials-loading">Carregando tutoriais...</div>
-      </div>
-    );
-  }
-
-  if (error) {
-    return (
-      <div className="tutorials-page">
-        <div className="tutorials-error">{error}</div>
-      </div>
-    );
-  }
+  if (loading) return <div className="tutorials-page"><div className="tutorials-loading">Carregando tutoriais...</div></div>;
+  if (error) return <div className="tutorials-page"><div className="tutorials-error">{error}</div></div>;
 
   return (
     <div className="tutorials-page">
@@ -103,19 +70,10 @@ export default function TutorialsList() {
               key={tutorial.id}
               onClick={() => handleTutorialClick(tutorial.id)}
               className="tutorial-card"
-              style={{
-                '--tutorial-bg': colors.bg,
-                '--tutorial-text': colors.text
-              }}
+              style={{ '--tutorial-bg': colors.bg, '--tutorial-text': colors.text }}
             >
               <div className="tutorial-card-content">
-                <div 
-                  className="tutorial-icon-container"
-                  style={{ 
-                    backgroundColor: colors.bg,
-                    color: colors.text
-                  }}
-                >
+                <div className="tutorial-icon-container" style={{ backgroundColor: colors.bg, color: colors.text }}>
                   <Icon className="tutorial-icon" />
                 </div>
                 <h3 className="tutorial-title">{tutorial.title}</h3>
@@ -128,4 +86,3 @@ export default function TutorialsList() {
     </div>
   );
 }
-
