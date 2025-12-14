@@ -101,9 +101,6 @@ const Home = () => {
 
   return (
     <div className="home-page">
-      <div className="bem-vindo">
-        <h1 className="home-title">Seja bem-vindo!</h1>
-      </div>
       <main className="container">
         <section className="versiculo-card">
           <h2>Versículo do Dia</h2>
