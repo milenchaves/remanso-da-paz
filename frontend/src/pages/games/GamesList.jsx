@@ -4,7 +4,7 @@ import "./GamesList.css";
 export default function GamesList() {
   const navigate = useNavigate();
   const games = [
-    { id: 1, name: "Jogo da Memória", color: "#FF6B6B", path: "/games/memory-game" },
+    { id: 1, name: "Jogo da Memória", color: "#FF6B6B", path: "/games/memoryGame"},
     { id: 2, name: "Quiz de Conhecimentos", color: "#118AB2" },
     { id: 3, name: "Organize a gaveta", color: "#5bf19fff" },
     { id: 4, name: "Adivinhe o Intruso", color: "#9D4EDD", path: "/games/odd-one-out" },

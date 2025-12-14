@@ -8,7 +8,7 @@ import TutorialsList from "./pages/tutorials/TutorialsList";
 import TutorialDetail from "./pages/tutorials/TutorialDetail";
 import OddOneOut from "./pages/games/oddOneOut/OddOneOut";
 import TypingGame from "./pages/games/typing/TypingGame";
-
+import MemoryGame from "./pages/games/memoryGame/MemoryGame";
 function App() {
   return (
     <BrowserRouter>
@@ -16,6 +16,7 @@ function App() {
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
           <Route path="/games" element={<GamesList />} />
+          <Route path="/games/memoryGame" element={<MemoryGame />} />
           <Route path="/games/odd-one-out" element={<OddOneOut />} />
           <Route path="/games/typing" element={<TypingGame />} />          
           {/* Rotas de Tutoriais */}
