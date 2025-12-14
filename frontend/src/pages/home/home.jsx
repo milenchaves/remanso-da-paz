@@ -101,6 +101,9 @@ const Home = () => {
 
   return (
     <div className="home-page">
+      <section className="frase-educativa">
+        <p className="frase-texto">Aprender é uma jornada contínua. Cada passo te aproxima de seus objetivos!</p>
+      </section>
       <main className="container">
         <section className="versiculo-card">
           <h2>Versículo do Dia</h2>
@@ -149,12 +152,16 @@ const Home = () => {
               if (e.key === 'Enter' || e.key === ' ') navigate('/tutorials');
             }}
           >
-            {/* Ícone substituindo a imagem azul/roxa */}
             <div className="icone-principal">
-              <img src="/apreender.png" alt="Tutoriais" />
+              <svg width="42" height="42" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 19.5C4 18.837 4.263 18.201 4.732 17.732C5.201 17.263 5.837 17 6.5 17H20" stroke="#7B68EE" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M6.5 2H20V22H6.5C5.837 22 5.201 21.737 4.732 21.268C4.263 20.799 4 20.163 4 19.5V4.5C4 3.837 4.263 3.201 4.732 2.732C5.201 2.263 5.837 2 6.5 2Z" stroke="#7B68EE" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M8 7H16" stroke="#7B68EE" strokeWidth="2" strokeLinecap="round"/>
+                <path d="M8 11H16" stroke="#7B68EE" strokeWidth="2" strokeLinecap="round"/>
+              </svg>
             </div>
             <h3>Tutoriais</h3>
-            <p className="card-subtitle">Aprenda com guias passo a passo</p>
+            <p className="card-subtitle">Aprenda a usar seu celular</p>
           </div>
 
           <div
@@ -167,10 +174,18 @@ const Home = () => {
             }}
           >
             <div className="icone-principal">
-              <img src="/game.png" alt="Jogos" />
+              <svg width="42" height="42" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="6" width="20" height="12" rx="2.5" stroke="#F15BB5" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M6 10H8M6 14H8" stroke="#F15BB5" strokeWidth="2.5" strokeLinecap="round"/>
+                <circle cx="16.5" cy="11" r="1.5" fill="none" stroke="#F15BB5" strokeWidth="2.5"/>
+                <circle cx="19.5" cy="13" r="1.5" fill="none" stroke="#F15BB5" strokeWidth="2.5"/>
+                <path d="M10 8V10M10 14V16" stroke="#F15BB5" strokeWidth="2.5" strokeLinecap="round"/>
+                <path d="M8 10L10 12L8 14" stroke="#F15BB5" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M12 10L10 12L12 14" stroke="#F15BB5" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
             </div>
             <h3>Jogos</h3>
-            <p className="card-subtitle">Divirta-se aprendendo</p>
+            <p className="card-subtitle">Pratique com jogos divertidos</p>
           </div>
           
         </section>
