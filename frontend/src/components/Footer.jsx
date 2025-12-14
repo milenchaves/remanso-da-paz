@@ -9,10 +9,13 @@ export default function Footer() {
 
   const isHome = location.pathname === '/';
 
+  // Não renderizar o footer na página home
+  if (isHome) {
+    return null;
+  }
+
   const handleBack = () => {
-    if (!isHome) {
-      navigate(-1);
-    }
+    navigate(-1);
   };
 
   const handleHome = () => {
@@ -23,25 +26,22 @@ export default function Footer() {
     <footer className="app-footer">
       {/* Botão VOLTAR (Esquerda) */}
       <button 
-        className="footer-button" 
+        className="footer-button footer-button-back" 
         onClick={handleBack}
-        style={{ opacity: isHome ? 0.3 : 1, cursor: isHome ? 'default' : 'pointer' }}
         aria-label="Voltar"
-        disabled={isHome}
       >
         <ArrowLeft className="footer-icon" />
-        <span className="footer-text"> Voltar</span>
+        <span className="footer-text">Voltar</span>
       </button>
 
       {/* Botão HOME (Direita) */}
       <button 
-        className={`footer-button ${isHome ? 'active' : ''}`} 
+        className="footer-button footer-button-home" 
         onClick={handleHome}
         aria-label="Início"
       >
         <Home className="footer-icon" />
-        {/* Se quiser texto no Home também, descomente abaixo: */}
-        {/* <span className="footer-text">Início</span> */}
+        <span className="footer-text">Início</span>
       </button>
     </footer>
   );

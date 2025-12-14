@@ -14,14 +14,13 @@
 
 .home-page {
     font-family: 'Baloo', 'Baloo Paaji 2', 'Merriweather', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    background: linear-gradient(to top, var(--cor-fundo-claro), #eef2ff);
-    min-height: calc(100vh - 70px);
-    padding-top: 70px;
     padding-bottom: 20px;
     margin: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
+    width: 100%;
     justify-content: flex-start;
     width: 100%;
 }

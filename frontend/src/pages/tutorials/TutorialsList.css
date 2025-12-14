@@ -1,70 +1,256 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@400..800&display=swap');
 
 .tutorials-page {
-  width: 100%;
-  min-height: calc(100vh - 70px);
-  background: #f9fafb;
-  padding: 1rem;
-  padding-right: 1.5rem;
-  box-sizing: border-box;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: calc(100vh - 120px);
 }
 
 .tutorials-header {
-  text-align: center; margin-bottom: 1.5rem; padding-top: 0.5rem;
-  max-width: 1100px; margin-left: auto; margin-right: auto;
+  text-align: center;
+  margin-bottom: 3rem;
+  padding-top: 0.5rem;
 }
+
 .tutorials-title {
-  font-size: 2rem; color: #4c1d95; margin: 0; font-weight: 800;
-  letter-spacing: 0.5px; font-family: 'Baloo Paaji 2', cursive, sans-serif; line-height: 1.1;
+  font-size: 3.5rem;
+  text-align: center;
+  margin: 0 0 0.5rem 0;
+  font-weight: 900;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+  background: linear-gradient(135deg, #3f51b5 0%, #3f51b5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.tutorials-subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  margin: 0;
+  font-weight: 400;
 }
 
 .tutorials-grid {
   display: grid;
-  /* Minmax de 150px permite 2 cards em telas de celular */
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 1rem; width: 100%; padding-bottom: 40px;
-  max-width: 1100px; margin-left: auto; margin-right: auto;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: clamp(0.75rem, 2vw, 2rem);
+  justify-content: center;
+  margin-bottom: 3rem;
+  width: 100%;
+  padding-bottom: 40px;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .tutorial-card {
-  background: white; border-radius: 16px; padding: 1rem;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08); transition: all 0.25s ease;
-  cursor: pointer; border: none; text-align: center;
-  display: flex; flex-direction: column; align-items: center; height: 100%;
+  background: white;
+  border-radius: 16px;
+  padding: 1.2rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 2px solid transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-height: 220px;
+  position: relative;
+  overflow: hidden;
 }
-.tutorial-card:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12); }
+
+.tutorial-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--tutorial-text), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.tutorial-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  border-color: var(--tutorial-text);
+}
+
+.tutorial-card:hover::before {
+  opacity: 1;
+}
+
+.tutorial-card:focus {
+  outline: 3px solid var(--tutorial-text);
+  outline-offset: 3px;
+}
+
+.tutorial-card:active {
+  transform: translateY(-5px);
+}
 
 .tutorial-card-content {
-  display: flex; flex-direction: column; align-items: center; gap: 0.8rem; width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
 }
 
 .tutorial-icon-container {
-  width: 50px; height: 50px; border-radius: 12px;
-  display: flex; align-items: center; justify-content: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
 }
-.tutorial-icon { width: 24px; height: 24px; stroke-width: 2; }
+
+.tutorial-card:hover .tutorial-icon-container {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.tutorial-icon {
+  width: 48px;
+  height: 48px;
+  stroke-width: 2;
+}
 
 .tutorial-title {
-  font-size: 1.1rem; color: #4c1d95; margin: 0; font-weight: 700;
-  font-family: 'Baloo Paaji 2', cursive, sans-serif; line-height: 1.2;
+  font-size: 1.4rem;
+  color: #333;
+  margin: 0 0 0.5rem 0;
+  font-weight: 700;
+  line-height: 1.3;
+  flex-grow: 1;
 }
 
 .tutorial-description {
-  font-size: 0.85rem; color: #666; margin: 0; line-height: 1.3;
-  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+  font-size: 1rem;
+  color: #888;
+  margin: 0;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-@media (min-width: 768px) {
-  .tutorials-page { padding: 2rem; padding-right: 2.5rem; }
-  .tutorials-title { font-size: 2.5rem; }
-  .tutorials-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1.5rem; }
-  .tutorial-icon-container { width: 60px; height: 60px; }
+@media (min-width: 850px) and (max-width: 1099px) {
+  .tutorials-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .tutorials-title {
+    font-size: 3rem;
+  }
 }
 
-@media (max-width: 767px) {
-  .tutorials-grid { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
-  .tutorial-card { padding: 0.8rem; }
-  .tutorials-title { font-size: 1.8rem; }
+@media (min-width: 600px) and (max-width: 849px) {
+  .tutorials-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .tutorials-title {
+    font-size: 2.8rem;
+  }
+}
+
+@media (max-width: 599px) {
+  .tutorials-page {
+    padding: 1.5rem;
+  }
+  
+  .tutorials-header {
+    margin-bottom: 2rem;
+  }
+  
+  .tutorials-title {
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+  }
+  
+  .tutorials-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .tutorials-grid {
+    grid-template-columns: 1fr;
+    max-width: 320px;
+    margin: 0 auto 2rem;
+  }
+  
+  .tutorial-card {
+    min-height: 250px;
+  }
+  
+  .tutorial-icon-container {
+    width: 85px;
+    height: 85px;
+  }
+  
+  .tutorial-icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .tutorial-title {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .tutorials-page {
+    padding: 1rem;
+  }
+  
+  .tutorials-title {
+    font-size: 1.8rem;
+  }
+  
+  .tutorial-card {
+    padding: 1.2rem;
+    min-height: 240px;
+  }
+  
+  .tutorials-grid {
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 360px) {
+  .tutorials-grid {
+    max-width: 260px;
+  }
+  
+  .tutorial-card {
+    min-height: 230px;
+  }
+  
+  .tutorial-icon-container {
+    width: 75px;
+    height: 75px;
+  }
+  
+  .tutorial-icon {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .tutorial-title {
+    font-size: 1.2rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
