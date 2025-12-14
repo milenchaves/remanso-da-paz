@@ -7,7 +7,6 @@ import TutorialsList from "./pages/tutorials/TutorialsList";
 import TutorialDetail from "./pages/tutorials/TutorialDetail";
 import OddOneOut from "./pages/games/oddOneOut/OddOneOut";
 import MemoryGame from "./pages/games/memoryGame/MemoryGame";
-import ThemeLevels from "./pages/games/oddOneOut/ThemeLevels";
 
 function App() {
   return (
@@ -20,7 +19,7 @@ function App() {
           {/* Rotas de Jogos */}
           <Route path="/games" element={<GamesList />} />
           <Route path="/games/odd-one-out" element={<OddOneOut />} />
-          <Route path="/games/odd-one-out/:themeId" element={<ThemeLevels />} />
+             <Route path="/games/odd-one-out/:themeId" element={<OddOneOut />} />
           <Route path="/games/memory-game" element={<MemoryGame />} />
           
           {/* Rotas de Tutoriais */}

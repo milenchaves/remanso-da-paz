@@ -1,108 +1,236 @@
-export const ODD_ONE_THEMES = [
-  {
-    theme: "Aplicativos de Mensagem",
-    levels: [
-      {
-        gridSize: 6,
-        normal: [
-          "https://img.icons8.com/color/96/whatsapp.png",
-          "https://img.icons8.com/color/96/telegram-app.png",
-          "https://img.icons8.com/color/96/facebook-messenger.png",
-        ],
-        intruder: "https://img.icons8.com/color/96/youtube-play.png",
-      },
-      {
-        gridSize: 8,
-        normal: [
-          "https://img.icons8.com/color/96/whatsapp.png",
-          "https://img.icons8.com/color/96/telegram-app.png",
-          "https://img.icons8.com/color/96/wechat.png",
-        ],
-        intruder: "https://img.icons8.com/color/96/calculator.png",
-      },
-      {
-        gridSize: 10,
-        normal: [
-          "https://img.icons8.com/color/96/facebook-messenger.png",
-          "https://img.icons8.com/color/96/telegram-app.png",
-          "https://img.icons8.com/color/96/whatsapp.png",
-        ],
-        intruder: "https://img.icons8.com/color/96/google-maps.png",
-      },
-      {
-        gridSize: 12,
-        normal: [
-          "https://img.icons8.com/color/96/whatsapp.png",
-          "https://img.icons8.com/color/96/wechat.png",
-          "https://img.icons8.com/color/96/telegram-app.png",
-        ],
-        intruder: "https://img.icons8.com/color/96/netflix.png",
-      },
-    ],
-  },
-    
-    // --- TEMAS NOVOS (Dados de Exemplo) ---
-    {
-    theme: "Redes Sociais",
-    levels: [
-      { gridSize: 6, normal: ["https://img.icons8.com/color/96/facebook.png", "https://img.icons8.com/color/96/instagram-new.png"], intruder: "https://img.icons8.com/color/96/spotify.png" },
-      { gridSize: 8, normal: ["https://img.icons8.com/color/96/twitter.png", "https://img.icons8.com/color/96/linkedin.png"], intruder: "https://img.icons8.com/color/96/tiktok.png" },
-      { gridSize: 10, normal: ["https://img.icons8.com/color/96/pinterest.png", "https://img.icons8.com/color/96/snapchat.png"], intruder: "https://img.icons8.com/color/96/whatsapp.png" },
-      { gridSize: 12, normal: ["https://img.icons8.com/color/96/instagram-new.png", "https://img.icons8.com/color/96/facebook.png"], intruder: "https://img.icons8.com/color/96/google-maps.png" },
-    ],
-  },
-    {
-    theme: "Aplicativos para Assistir Vídeo",
-    levels: [
-      { gridSize: 6, normal: ["https://img.icons8.com/color/96/youtube-play.png", "https://img.icons8.com/color/96/netflix.png"], intruder: "https://img.icons8.com/color/96/telegram-app.png" },
-      { gridSize: 8, normal: ["https://img.icons8.com/color/96/vimeo.png", "https://img.icons8.com/color/96/amazon-prime-video.png"], intruder: "https://img.icons8.com/color/96/whatsapp.png" },
-      { gridSize: 10, normal: ["https://img.icons8.com/color/96/youtube-play.png", "https://img.icons8.com/color/96/netflix.png"], intruder: "https://img.icons8.com/color/96/calculator.png" },
-      { gridSize: 12, normal: ["https://img.icons8.com/color/96/hbo-max.png", "https://img.icons8.com/color/96/disney-plus.png"], intruder: "https://img.icons8.com/color/96/facebook-messenger.png" },
-    ],
-  },
-    {
-    theme: "Aplicativos de Entretenimento",
-    levels: [
-      { gridSize: 6, normal: ["https://img.icons8.com/color/96/spotify.png", "https://img.icons8.com/color/96/tiktok.png"], intruder: "https://img.icons8.com/color/96/gmail.png" },
-      { gridSize: 8, normal: ["https://img.icons8.com/color/96/podcast.png", "https://img.icons8.com/color/96/soundcloud.png"], intruder: "https://img.icons8.com/color/96/calendar.png" },
-      { gridSize: 10, normal: ["https://img.icons8.com/color/96/spotify.png", "https://img.icons8.com/color/96/tiktok.png"], intruder: "https://img.icons8.com/color/96/wechat.png" },
-      { gridSize: 12, normal: ["https://img.icons8.com/color/96/shazam.png", "https://img.icons8.com/color/96/audible.png"], intruder: "https://img.icons8.com/color/96/maps.png" },
-    ],
-  },
-    {
-    theme: "Compras",
-    levels: [
-      { gridSize: 6, normal: ["https://img.icons8.com/color/96/amazon.png", "https://img.icons8.com/color/96/ebay.png"], intruder: "https://img.icons8.com/color/96/calculator.png" },
-      { gridSize: 8, normal: ["https://img.icons8.com/color/96/aliexpress.png", "https://img.icons8.com/color/96/shein.png"], intruder: "https://img.icons8.com/color/96/youtube-play.png" },
-      { gridSize: 10, normal: ["https://img.icons8.com/color/96/amazon.png", "https://img.icons8.com/color/96/ebay.png"], intruder: "https://img.icons8.com/color/96/telegram-app.png" },
-      { gridSize: 12, normal: ["https://img.icons8.com/color/96/walmart.png", "https://img.icons8.com/color/96/mercado-livre.png"], intruder: "https://img.icons8.com/color/96/whatsapp.png" },
-    ],
-  },
-    {
-    theme: "Jogos",
-    levels: [
-      { gridSize: 6, normal: ["https://img.icons8.com/color/96/google-play.png", "https://img.icons8.com/color/96/steam.png"], intruder: "https://img.icons8.com/color/96/gmail.png" },
-      { gridSize: 8, normal: ["https://img.icons8.com/color/96/xbox.png", "https://img.icons8.com/color/96/playstation.png"], intruder: "https://img.icons8.com/color/96/spotify.png" },
-      { gridSize: 10, normal: ["https://img.icons8.com/color/96/google-play.png", "https://img.icons8.com/color/96/apple-arcade.png"], intruder: "https://img.icons8.com/color/96/instagram-new.png" },
-      { gridSize: 12, normal: ["https://img.icons8.com/color/96/nintendo-switch.png", "https://img.icons8.com/color/96/geforce-now.png"], intruder: "https://img.icons8.com/color/96/facebook.png" },
-    ],
-  },
-    {
-    theme: "Fotos",
-    levels: [
-      { gridSize: 6, normal: ["https://img.icons8.com/color/96/google-photos.png", "https://img.icons8.com/color/96/adobe-photoshop-express.png"], intruder: "https://img.icons8.com/color/96/telegram-app.png" },
-      { gridSize: 8, normal: ["https://img.icons8.com/color/96/instagram-new.png", "https://img.icons8.com/color/96/pinterest.png"], intruder: "https://img.icons8.com/color/96/whatsapp.png" },
-      { gridSize: 10, normal: ["https://img.icons8.com/color/96/google-photos.png", "https://img.icons8.com/color/96/snapseed.png"], intruder: "https://img.icons8.com/color/96/netflix.png" },
-      { gridSize: 12, normal: ["https://img.icons8.com/color/96/lightroom.png", "https://img.icons8.com/color/96/vsco.png"], intruder: "https://img.icons8.com/color/96/calculator.png" },
-    ],
-  },
-    {
-    theme: "Aplicativos de Finanças",
-    levels: [
-      { gridSize: 6, normal: ["https://img.icons8.com/color/96/bank.png", "https://img.icons8.com/color/96/paypal.png"], intruder: "https://img.icons8.com/color/96/facebook-messenger.png" },
-      { gridSize: 8, normal: ["https://img.icons8.com/color/96/coinbase.png", "https://img.icons8.com/color/96/binance.png"], intruder: "https://img.icons8.com/color/96/youtube-play.png" },
-      { gridSize: 10, normal: ["https://img.icons8.com/color/96/mastercard.png", "https://img.icons8.com/color/96/visa.png"], intruder: "https://img.icons8.com/color/96/telegram-app.png" },
-      { gridSize: 12, normal: ["https://img.icons8.com/color/96/google-pay.png", "https://img.icons8.com/color/96/apple-pay.png"], intruder: "https://img.icons8.com/color/96/wechat.png" },
-    ],
-  },
+import { normalizeOddOneThemes } from "./normalizeOddOneOut";
+
+const ODD_ONE_THEMES_RAW = [
+  {
+    theme: "Aplicativos de Mensagem",
+    color: "#4caf50",
+    levels: [
+      {
+        gridSize: 6,
+        normal: [
+          "/oddOneOut/messages/whatsapp.png",
+          "/oddOneOut/messages/facebook-messenger.png",
+          "/oddOneOut/messages/sms.png",
+          "/oddOneOut/messages/imessage.png",
+        ],
+        intruder: "/oddOneOut/shopping/americanas.png",
+      },
+      {
+        gridSize: 8,
+        normal: [
+          "/oddOneOut/messages/whatsapp.png",
+          "/oddOneOut/messages/telegram-app.png",
+          "/oddOneOut/messages/facebook-messenger.png",
+          "/oddOneOut/messages/facebook-messenger.png",
+          "/oddOneOut/messages/signal-app.png",
+          "/oddOneOut/messages/imessage.png",
+          "/oddOneOut/messages/discord.png",
+          "/oddOneOut/messages/discord.png",
+          "/oddOneOut/messages/skype.png",
+        ],
+        intruder: "/oddOneOut/others/candycrush.png",
+      },
+      {
+        gridSize: 10,
+        normal: [
+          "/oddOneOut/messages/discord.png",
+          "/oddOneOut/messages/discord.png",
+          "/oddOneOut/messages/whatsapp.png",
+          "/oddOneOut/messages/microsoft-teams.png",
+          "/oddOneOut/messages/zoom.png",
+          "/oddOneOut/messages/skype.png",
+          "/oddOneOut/messages/whatsapp.png",          
+          "/oddOneOut/messages/signal-app.png",
+          "/oddOneOut/messages/skype.png",
+          "/oddOneOut/messages/signal-app.png",
+          "/oddOneOut/messages/imessage.png",
+          "/oddOneOut/messages/discord.png",
+          "/oddOneOut/messages/slack.png",
+          "/oddOneOut/messages/signal-app.png",
+        ],
+        intruder:  "/oddOneOut/others/google-pay.png",
+      },
+    ],
+  },
+  {
+    theme: "Redes Sociais",
+    color: "#af4c70ff",
+    levels: [
+      {
+        gridSize: 6,
+        normal: [
+           "/oddOneOut/socialMedia/whatsapp.png",
+           "/oddOneOut/socialMedia/facebook.png",
+           "/oddOneOut/socialMedia/facebook-messenger.png",
+           "/oddOneOut/socialMedia/telegram-app.png",
+        ],
+        intruder: "/oddOneOut/shopping/magalu.png",
+      },
+      {
+        gridSize: 8,
+        normal: [
+          "/oddOneOut/socialMedia/whatsapp.png",
+          "/oddOneOut/socialMedia/whatsapp.png",
+          "/oddOneOut/socialMedia/facebook.png",
+          "/oddOneOut/socialMedia/facebook-messenger.png",
+          "/oddOneOut/socialMedia/facebook-messenger.png",
+          "/oddOneOut/socialMedia/discord.png",
+          "/oddOneOut/socialMedia/linkedin.png",
+          "/oddOneOut/socialMedia/linkedin.png",
+          "/oddOneOut/socialMedia/pinterest.png",
+        ],
+        intruder: "/oddOneOut/photos/camera.png",
+      },
+      {
+        gridSize: 10,
+        normal: [
+          "/oddOneOut/socialMedia/pinterest.png",
+          "/oddOneOut/socialMedia/reddit.png",
+          "/oddOneOut/socialMedia/snapchat.png",
+          "/oddOneOut/socialMedia/discord.png",
+          "/oddOneOut/socialMedia/facebook-messenger.png",
+          "/oddOneOut/socialMedia/whatsapp.png",
+          "/oddOneOut/socialMedia/linkedin.png",
+          "/oddOneOut/socialMedia/tumblr.png",
+          "/oddOneOut/socialMedia/instagram-new.png",
+        ],
+        intruder: "/oddOneOut/photos/picsart.png",
+      },
+    ],
+  },
+  {
+    theme: "Aplicativos para Assistir Vídeo",
+    color: "#ff0000ff",
+    levels: [
+      {
+        gridSize: 6,
+        normal: [
+          "/oddOneOut/video/instagram-new.png",
+          "/oddOneOut/video/whatsapp.png",
+          "/oddOneOut/video/tiktok.png",
+          "/oddOneOut/video/kwai.png",
+        ],
+        intruder:  "/oddOneOut/others/bradesco.png",
+      },
+      {
+        gridSize: 8,
+        normal: [
+          "/oddOneOut/video/instagram-new.png",
+          "/oddOneOut/video/whatsapp.png",
+          "/oddOneOut/video/whatsapp.png",
+          "/oddOneOut/video/tiktok.png",
+          "/oddOneOut/video/youtube-play.png",
+          "/oddOneOut/video/youtube-play.png",
+          "/oddOneOut/video/kwai.png",
+          "/oddOneOut/video/youtube-play.png",
+          "/oddOneOut/socialMedia/snapchat.png",
+        ],
+        intruder: "/oddOneOut/others/calendar.png",
+      },
+    ],
+  },
+  {
+    theme: "Aplicativos de Entretenimento",
+    color: "#4ca5afff",
+    levels: [
+      {
+        gridSize: 6,
+        normal: [
+          "/oddOneOut/video/kwai.png",
+          "/oddOneOut/video/tiktok.png",
+          "/oddOneOut/entertainment/spotify.png",
+          "/oddOneOut/entertainment/icons8-disney-plus-50.png",
+        ],
+        intruder: "/oddOneOut/messages/imessage.png",
+      },
+      {
+        gridSize: 8,
+        normal: [
+          "/oddOneOut/entertainment/icons8-hbo-50.png",
+          "/oddOneOut/entertainment/spotify.png",
+          "/oddOneOut/entertainment/netflix.png",
+          "/oddOneOut/entertainment/deezer.png",
+          "/oddOneOut/entertainment/apple-tv.png",
+          "/oddOneOut/entertainment/deezer.png",
+          "/oddOneOut/entertainment/itunes.png",
+          "/oddOneOut/entertainment/spotify.png",
+          "/oddOneOut/entertainment/prime-video.png",
+        ],
+        intruder: "/oddOneOut/messages/sms.png",
+      },
+      {
+        gridSize: 10,
+        normal: [
+          "/oddOneOut/entertainment/shazam.png",
+          "/oddOneOut/entertainment/netflix.png",
+          "/oddOneOut/entertainment/spotify.png",
+          "/oddOneOut/entertainment/deezer.png",
+          "/oddOneOut/entertainment/apple-tv.png",
+          "/oddOneOut/entertainment/icons8-disney-plus-50.png",
+          "/oddOneOut/entertainment/apple-tv.png",
+          "/oddOneOut/entertainment/deezer.png",
+          "/oddOneOut/entertainment/icons8-disney-plus-50.png",
+          "/oddOneOut/entertainment/icons8-hbo-50.png",
+          "/oddOneOut/entertainment/itunes.png",
+          "/oddOneOut/entertainment/apple-music.png",
+          "/oddOneOut/entertainment/icons8-hbo-50.png",
+          "/oddOneOut/entertainment/itunes.png",
+        ],
+        intruder: "/oddOneOut/others/calculator.png",
+      },
+    ],
+  },
+  {
+    theme: "Aplicativos para Compras",
+    color: "#6f4cafff",
+    levels: [
+      {
+        gridSize: 6,
+        normal: [
+          "/oddOneOut/shopping/amazon.png",
+          "/oddOneOut/shopping/cbahia.png",
+          "/oddOneOut/shopping/americanas.png",
+          "/oddOneOut/shopping/magalu.png",
+        ],
+        intruder: "/oddOneOut/photos/camera.png",
+      },
+      {
+        gridSize: 8,
+        normal: [
+          "/oddOneOut/shopping/shein.png",
+          "/oddOneOut/shopping/shopee.png",
+          "/oddOneOut/shopping/amazon.png",
+          "/oddOneOut/shopping/magalu.png",
+          "/oddOneOut/shopping/americanas.png",
+          "/oddOneOut/shopping/amazon.png",
+          "/oddOneOut/shopping/olx.png",
+          "/oddOneOut/shopping/americanas.png",
+          "/oddOneOut/shopping/magalu.png",
+        ],
+        intruder:"/oddOneOut/messages/zoom.png",
+      },
+      {
+        gridSize: 10,
+        normal: [
+          "/oddOneOut/shopping/shein.png",
+          "/oddOneOut/shopping/cbahia.png",
+          "/oddOneOut/shopping/shein.png",
+          "/oddOneOut/shopping/cbahia.png",
+          "/oddOneOut/shopping/olx.png",
+          "/oddOneOut/shopping/americanas.png",
+          "/oddOneOut/shopping/magalu.png",
+          "/oddOneOut/shopping/shopee.png",
+          "/oddOneOut/shopping/shopee.png",
+          "/oddOneOut/shopping/aliexpress.png",
+          "/oddOneOut/shopping/magalu.png",
+          "/oddOneOut/shopping/olx.png",
+          "/oddOneOut/shopping/shein.png",
+          "/oddOneOut/shopping/magalu.png",
+        ],
+        intruder:"/oddOneOut/others/google-maps.png",
+      },
+    ],
+  },
 ];
+
+export const ODD_ONE_THEMES = normalizeOddOneThemes(ODD_ONE_THEMES_RAW);

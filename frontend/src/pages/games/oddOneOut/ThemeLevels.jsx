@@ -41,10 +41,8 @@ export default function ThemeLevels({ levelData, onSuccess, onError, resetSignal
     setLocked(true);
 
     if (item.intruder) {
-      setMessage("🎉 Acertou!");
       setTimeout(() => onSuccess(), 900);
     } else {
-      setMessage("❌ Errou!");
       setTimeout(() => onError(), 900);
     }
   }
