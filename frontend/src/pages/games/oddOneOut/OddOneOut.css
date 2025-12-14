@@ -1,0 +1,325 @@
+.games-page {
+    padding: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    /* Scroll interno */
+    max-height: calc(100vh - 70px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.games-header {
+    text-align: center;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.games-title {
+    font-size: 2.5rem;
+    color: #3f51b5;
+    margin: 0 0 0.2rem 0;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.games-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    margin: 0;
+    font-weight: 400;
+}
+
+.theme-change-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.theme-change-btn {
+    padding: 0.5rem 1.25rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    flex-grow: 0;
+    flex-shrink: 0;
+    background: white;
+    color: #3f51b5;
+    border: 2px solid #3f51b5;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    max-width: fit-content;
+}
+
+.theme-change-btn:hover {
+    background: #f5f5f5;
+    transform: translateY(-2px);
+}
+
+.theme-selection-page {
+    justify-content: center;
+}
+
+.theme-selection-page .games-header {
+    margin-bottom: 0.5rem;
+    padding-top: 0;
+}
+
+.theme-selector-grid.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 3rem;
+    width: 100%;
+    max-width: 1100px;
+}
+
+.theme-card.game-card {
+    background: white;
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 2px solid transparent;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 180px;
+    justify-content: center;
+    position: relative;
+}
+
+.theme-card.game-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, var(--card-color), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.theme-card.game-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    border-color: var(--card-color, #3f51b5);
+}
+
+.theme-card.game-card:hover::before {
+    opacity: 1;
+}
+
+.game-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.game-name {
+    font-size: 1.8rem;
+    color: #333;
+    margin: 0 0 1rem 0;
+    font-weight: 700;
+    line-height: 1.3;
+    flex-grow: 0;
+}
+
+.game-hint {
+    font-size: 1.1rem;
+    color: #888;
+    margin-top: 0.5rem;
+    padding: 0.3rem 0.8rem;
+    background-color: #f8f9fa;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.theme-card.game-card:hover .game-hint {
+    background-color: var(--card-color);
+    color: white;
+}
+
+.level-selector.level-tabs {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 20px;
+    padding: 40px 50px;
+    max-width: 600px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.1s ease-out;
+}
+
+.modal-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.modal-btn {
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.1s, transform 0.1s;
+    text-transform: uppercase;
+    flex-grow: 1;
+    max-width: 50%;
+    min-width: 170px;
+}
+
+.modal-btn.primary {
+    background: #3f51b5;
+    color: white;
+}
+
+.modal-btn.primary:hover {
+    background: #304a99;
+    transform: translateY(-1px);
+}
+
+.modal-btn.secondary {
+    background: transparent;
+    border: 2px solid #ccc;
+    color: #666;
+    flex-grow: 0.6;
+    min-width: 120px;
+    max-width: 45%;
+}
+
+.modal-btn.secondary:hover {
+    background: #f0f0f0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+    .games-page {
+        max-height: calc(100vh - 60px);
+        padding: 1rem;
+    }
+
+    .games-title {
+        font-size: 2rem;
+    }
+
+    .theme-selector-grid.games-grid {
+        gap: 1.5rem;
+    }
+
+    .theme-card.game-card {
+        height: 160px;
+        padding: 1rem;
+    }
+
+    .game-name {
+        font-size: 1.6rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .game-hint {
+        font-size: 1rem;
+    }
+
+    .level-selector.level-tabs {
+        gap: 8px;
+    }
+
+    .level-btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .games-page {
+        max-height: calc(100vh - 60px);
+    }
+
+    .theme-selector-grid.games-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        max-width: 350px;
+        margin-bottom: 2rem;
+    }
+
+    .games-title {
+        font-size: 1.8rem;
+    }
+
+    .games-subtitle {
+        font-size: 1rem;
+    }
+
+    .theme-card.game-card {
+        height: 140px;
+        padding: 1rem 1.2rem;
+    }
+
+    .game-name {
+        font-size: 1.5rem;
+        margin-bottom: 0.6rem;
+    }
+
+    .level-selector.level-tabs {
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .level-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    .modal-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .modal-btn {
+        min-width: 90%;
+        max-width: 100%;
+    }
+}

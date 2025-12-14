@@ -67,7 +67,7 @@
   border-radius: 20px;
   padding: 1.5rem;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
+  transition: all 0.1s ease;
   cursor: pointer;
   border: 2px solid transparent;
   display: flex;
@@ -88,7 +88,7 @@
   height: 5px;
   background: linear-gradient(90deg, var(--card-color), transparent);
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.1s ease;
 }
 
 .game-card:hover {
@@ -129,7 +129,7 @@
   margin-bottom: 1.5rem;
   background: linear-gradient(135deg, var(--card-color) 0%, color-mix(in srgb, var(--card-color) 60%, white) 100%);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease;
+  transition: transform 0.1s ease;
 }
 
 .game-card:hover .game-icon {
@@ -159,7 +159,7 @@
   padding: 0.3rem 0.8rem;
   background-color: #f8f9fa;
   border-radius: 20px;
-  transition: all 0.3s ease;
+  transition: all 0.1s ease;
 }
 
 .game-card:hover .game-hint {

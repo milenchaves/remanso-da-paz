@@ -125,7 +125,7 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    transition: background-color 0.3s, transform 0.2s;
+    transition: background-color 0.1s, transform 0.1s;
     box-shadow: 0 4px 6px rgba(20, 20, 19, 0.3);
     border: none;
     font-size: 0.95rem;
@@ -165,7 +165,7 @@ body {
     border-radius: 12px;
     padding: 1.3rem 1.1rem;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
+    transition: all 0.1s ease;
     cursor: pointer;
     border: 2px solid transparent;
     display: flex;
@@ -187,7 +187,7 @@ body {
     height: 4px;
     background: linear-gradient(90deg, var(--card-color), transparent);
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.1s ease;
 }
 
 .card-navegacao:hover {
@@ -219,7 +219,7 @@ body {
     margin-bottom: 0.9rem;
     background: linear-gradient(135deg, var(--card-color) 0%, color-mix(in srgb, var(--card-color) 60%, white) 100%);
     box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease;
+    transition: transform 0.1s ease;
     flex-shrink: 0;
     position: relative;
     overflow: hidden;
@@ -259,7 +259,7 @@ body {
     padding: 0.3rem 0.8rem;
     background-color: #f8f9fa;
     border-radius: 15px;
-    transition: all 0.3s ease;
+    transition: all 0.1s ease;
     width: fit-content;
     font-weight: 500;
 }
