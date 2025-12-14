@@ -41,16 +41,10 @@ export default function Header() {
           aria-label="Ir para página inicial"
         >
           <img 
-            src="/logo_remanso.jpeg"
-              alt="Logo do Remanso da Paz: Um conjunto de mãos estilizadas nas cores vermelho, 
-              laranja e amarelo, todas erguidas com um coração vazado no centro da palma. 
-              No topo, uma mão vermelha maior aparece estendida para baixo, simbolizando acolhimento e ajuda. 
-              Abaixo das ilustrações, há uma faixa preta com o texto 'Remanso da Paz' em letras grandes em tons de amarelo e laranja, 
-              e logo abaixo, em letras brancas menores, a frase 'Casa de acolhimento São João Calábria'."
+            src="/netodigital.png"
+              alt="Ilustração de uma avó e uma criança representando inclusão digital entre gerações, ao lado do texto Neto Digital"
               className="logo"
-              width="60"
-              height="60"
-              aria-hidden="false"
+              
           />
 
         </div>
@@ -63,7 +57,7 @@ export default function Header() {
           onKeyDown={(e) => handleKeyDown(e, handleTitleClick)}
           aria-label="Ir para página inicial"
         >
-          Remanso da Paz
+          Neto digital
         </h1>
       </div>
     </header>
