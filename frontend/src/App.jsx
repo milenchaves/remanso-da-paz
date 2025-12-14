@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import TutorialsList from "./pages/tutorials/TutorialsList";
 import TutorialDetail from "./pages/tutorials/TutorialDetail";
 import OddOneOut from "./pages/games/oddOneOut/OddOneOut";
+import DrawerOrganizer from "./pages/games/DrawerOrganizer/DrawerOrganizer";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/games" element={<GamesList />} />
           <Route path="/games/odd-one-out" element={<OddOneOut />} />
+          <Route path="/games/DrawerOrganizer" element={<DrawerOrganizer/>} />
           <Route path="/tutorials" element={<TutorialsList />} />
           <Route path="/tutorials/:id" element={<TutorialDetail />} />
         </Routes>

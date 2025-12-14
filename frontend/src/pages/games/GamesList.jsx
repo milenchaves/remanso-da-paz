@@ -6,7 +6,7 @@ export default function GamesList() {
   const games = [
     { id: 1, name: "Jogo da Memória", color: "#FF6B6B" },
     { id: 2, name: "Quiz de Conhecimentos", color: "#118AB2" },
-    { id: 3, name: "Organize a gaveta", color: "#5bf19fff" },
+    { id: 3, name: "Organize a gaveta", color: "#5bf19fff", path: "/games/DrawerOrganizer" },
     { id: 4, name: "Adivinhe o Intruso", color: "#9D4EDD", path: "/games/odd-one-out" },
   ];
 
