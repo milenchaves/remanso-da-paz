@@ -43,8 +43,8 @@ const appIcons = [
 
 const levels = {
   easy: { pairs: 6, gridCols: 4 }, 
-  medium: { pairs: 10, gridCols: 5 }, 
-  hard: { pairs: 12, gridCols: 6 }, 
+  medium: { pairs: 8, gridCols: 4 }, 
+  hard: { pairs: 10, gridCols: 5 }, 
 };
 
 export default function MemoryGame() {
