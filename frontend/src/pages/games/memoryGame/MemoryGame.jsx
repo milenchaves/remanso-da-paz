@@ -1,9 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./MemoryGame.css";
 import { 
   Phone, MessageSquare, Camera, Volume2, Music, Mic, Image, 
   Video, Search, Sparkles, Images 
 } from 'lucide-react';
+
+useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [selectedThemeIndex]);
 
 const iconMap = {
   phone: Phone, 

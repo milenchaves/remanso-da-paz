@@ -19,9 +19,8 @@ function App() {
           <Route path="/games" element={<GamesList />} />
           <Route path="/games/memoryGame" element={<MemoryGame />} />
           <Route path="/games/odd-one-out" element={<OddOneOut />} />
-             <Route path="/games/odd-one-out/:themeId" element={<OddOneOut />} />
+          <Route path="/games/odd-one-out/:themeId" element={<OddOneOut />} />
           <Route path="/games/typing" element={<TypingGame />} />          
-          {/* Rotas de Tutoriais */}
           <Route path="/tutorials" element={<TutorialsList />} />
           <Route path="/tutorials/:id" element={<TutorialDetail />} />
         </Route>
