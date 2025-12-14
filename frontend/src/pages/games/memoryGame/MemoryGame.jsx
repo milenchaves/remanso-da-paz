@@ -1,25 +1,50 @@
 import { useState } from "react";
 import "./MemoryGame.css";
+import { 
+  Phone, MessageSquare, Camera, Volume2, Music, Mic, Image, 
+  Video, Search, Sparkles, Images 
+} from 'lucide-react';
+
+const iconMap = {
+  phone: Phone, 
+  message: MessageSquare, 
+  camera: Camera, 
+  volume: Volume2,
+  music: Music, 
+  mic: Mic, 
+  image: Image, 
+  video: Video, 
+  search: Search,
+  bot: Sparkles, 
+  images: Images
+};
+
+const colorMap = {
+  blue: { bg: '#DBEAFE', text: '#1E40AF' },
+  green: { bg: '#D1FAE5', text: '#065F46' },
+  purple: { bg: '#E9D5FF', text: '#6B21A8' },
+  orange: { bg: '#FED7AA', text: '#9A3412' },
+  red: { bg: '#FEE2E2', text: '#991B1B' }
+};
 
 const appIcons = [
-  { id: "phone", name: "Telefone", icon: "📞" },
-  { id: "mail", name: "E-mail", icon: "✉️" },
-  { id: "camera", name: "Câmera", icon: "📷" },
-  { id: "gallery", name: "Galeria", icon: "🖼️" },
-  { id: "speaker", name: "Alto-falante", icon: "🔊" },
-  { id: "message", name: "Mensagem", icon: "💬" },
-  { id: "calendar", name: "Calendário", icon: "📅" },
-  { id: "settings", name: "Configurações", icon: "⚙️" },
-  { id: "music", name: "Música", icon: "🎵" },
-  { id: "video", name: "Vídeo", icon: "🎥" },
-  { id: "notes", name: "Notas", icon: "📝" },
-  { id: "clock", name: "Relógio", icon: "🕐" },
+  { id: "phone", name: "Telefone", iconKey: "phone", color: "blue" },
+  { id: "message", name: "Mensagem", iconKey: "message", color: "green" },
+  { id: "camera", name: "Câmera", iconKey: "camera", color: "purple" },
+  { id: "volume", name: "Alto-falante", iconKey: "volume", color: "orange" },
+  { id: "music", name: "Música", iconKey: "music", color: "red" },
+  { id: "mic", name: "Microfone", iconKey: "mic", color: "blue" },
+  { id: "image", name: "Imagem", iconKey: "image", color: "green" },
+  { id: "video", name: "Vídeo", iconKey: "video", color: "purple" },
+  { id: "search", name: "Buscar", iconKey: "search", color: "orange" },
+  { id: "bot", name: "Assistente", iconKey: "bot", color: "red" },
+  { id: "images", name: "Galeria", iconKey: "images", color: "blue" },
 ];
 
 const levels = {
   easy: { pairs: 6, gridCols: 4 }, 
-  medium: { pairs: 8, gridCols: 4 },
-  hard: { pairs: 12, gridCols: 6 },
+  medium: { pairs: 10, gridCols: 5 }, 
+  hard: { pairs: 12, gridCols: 6 }, 
 };
 
 export default function MemoryGame() {
@@ -41,8 +66,9 @@ export default function MemoryGame() {
     const newCards = shuffled.map((icon, index) => ({
       id: index,
       iconId: icon.id,
-      icon: icon.icon,
+      iconKey: icon.iconKey,
       name: icon.name,
+      color: icon.color,
       flipped: false,
       matched: false,
     }));
@@ -122,9 +148,26 @@ export default function MemoryGame() {
     initializeGame(currentLevel);
   };
 
+  const handleNextLevel = () => {
+    const levelOrder = ["easy", "medium", "hard"];
+    const currentIndex = levelOrder.indexOf(currentLevel);
+    
+    if (currentIndex < levelOrder.length - 1) {
+      const nextLevel = levelOrder[currentIndex + 1];
+      setCurrentLevel(nextLevel);
+      initializeGame(nextLevel);
+    } else {
+      initializeGame(currentLevel);
+    }
+  };
+
   const handleLevelChange = (level) => {
     setCurrentLevel(level);
     initializeGame(level);
+  };
+
+  const handleCloseModal = () => {
+    setGameComplete(false);
   };
 
   const levelConfig = levels[currentLevel];
@@ -163,18 +206,31 @@ export default function MemoryGame() {
       </div>
 
       {gameComplete && (
-        <div className="completion-message">
-          <div className="completion-content">
-            <span className="completion-emoji">🎉</span>
-            <h2 className="completion-title">Parabéns! Você completou o jogo!</h2>
-            <p className="completion-subtitle">
-              Nível: {levelNames[currentLevel]}
-            </p>
-            <button className="play-again-btn" onClick={handlePlayAgain}>
-              Jogar Novamente
+        <>
+          <div className="completion-overlay" onClick={handleCloseModal}></div>
+          <div className="completion-message">
+            <button className="close-modal-btn" onClick={handleCloseModal}>
+              ×
             </button>
+            <div className="completion-content">
+              <span className="completion-emoji">🎉</span>
+              <h2 className="completion-title">Parabéns! Você completou o jogo!</h2>
+              <p className="completion-subtitle">
+                Nível: {levelNames[currentLevel]}
+              </p>
+              <div className="completion-buttons">
+                <button className="play-again-btn" onClick={handlePlayAgain}>
+                  Jogar Novamente
+                </button>
+                {currentLevel !== "hard" && (
+                  <button className="next-level-btn" onClick={handleNextLevel}>
+                    Próximo Nível
+                  </button>
+                )}
+              </div>
+            </div>
           </div>
-        </div>
+        </>
       )}
 
       <div
@@ -191,7 +247,18 @@ export default function MemoryGame() {
           >
             <div className="card-front">?</div>
             <div className="card-back">
-              <span className="card-icon">{card.icon}</span>
+              {(() => {
+                const Icon = iconMap[card.iconKey] || Phone;
+                const colors = colorMap[card.color] || colorMap.blue;
+                return (
+                  <div 
+                    className="card-icon-container" 
+                    style={{ backgroundColor: colors.bg, color: colors.text }}
+                  >
+                    <Icon className="card-icon" size={32} />
+                  </div>
+                );
+              })()}
             </div>
           </div>
         ))}

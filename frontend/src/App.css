@@ -19,6 +19,7 @@ html, body {
 
 .content {
   padding-top: 56px;
+  padding-bottom: 70px;
   min-height: 100vh;
 }
 
