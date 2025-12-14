@@ -1,316 +1,116 @@
 /* ===== PAGE LAYOUT ===== */
 .tutorial-detail-page {
   width: 100%;
-  height: 80vh; /* MUDANÇA: Fixa a altura na tela inteira */
+  height: 100vh; /* Fixa na tela inteira */
   background: #f9fafb;
-  padding: 10px; /* Reduzi o padding para ganhar espaço */
+  padding: 10px;
+  padding-top: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
-  overflow-y: auto; /* A barra de rolagem aparecerá aqui agora */
-}
-
-/* ===== BACK BUTTON ===== */
-.back-button {
-  display: flex;
-  align-items: center;
-  margin-bottom: 16px;
-  background: none;
-  border: none;
-  color: #374151;
-  font-size: 14px; /* Reduzido de 16px */
-  cursor: pointer;
-  gap: 6px;
-  transition: 0.2s;
-}
-
-.back-button:hover {
-  color: #111827;
-  transform: translateX(-2px);
-}
-
-.back-icon {
-  width: 18px; /* Reduzido de 20px */
-  height: 18px;
+  overflow-y: auto; /* Scroll acontece aqui */
 }
 
 /* ===== MAIN CONTAINER ===== */
 .tutorial-view-container {
   width: 100%;
-  max-width: 550px; /* Levemente menor */
+  max-width: 550px;
   height: auto;
   background: #ffffff;
   border-radius: 12px;
-  padding: 20px; /* Reduzi de 24px */
+  padding: 20px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.06);
   display: flex;
   flex-direction: column;
-  gap: 16px; /* Reduzi drasticamente de 24px para juntar os itens */
-  
-  /* Margem extra no final para garantir que o scroll vá até o último botão */
+  gap: 16px;
+  margin-bottom: 40px; /* Margem para o final do scroll */
 }
 
-/* ===== HEADER FOR INTRO ===== */
-.tutorial-detail-header {
-  text-align: center;
-}
-
+/* ===== HEADER ===== */
+.tutorial-detail-header { text-align: center; }
 .tutorial-detail-icon-container {
-  width: 64px; /* Reduzido de 82px */
-  height: 64px;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 64px; height: 64px; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
   margin: 0 auto 12px;
 }
+.tutorial-detail-icon { width: 32px; height: 32px; }
+.tutorial-detail-title { font-size: 22px; font-weight: 700; color: #111827; margin-bottom: 8px; }
+.tutorial-detail-description { font-size: 14px; color: #4b5563; }
 
-.tutorial-detail-icon {
-  width: 32px; /* Reduzido de 44px */
-  height: 32px;
-}
+/* ===== INTRO & TEXTS ===== */
+.tutorial-introduction { margin-top: 16px; }
+.introduction-text { font-size: 15px; line-height: 1.5; color: #374151; }
 
-.tutorial-detail-title {
-  font-size: 22px; /* Reduzido de 28px */
-  font-weight: 700;
-  color: #111827;
-  margin-bottom: 8px;
-}
-
-.tutorial-detail-description {
-  font-size: 14px; /* Reduzido de 16px */
-  color: #4b5563;
-}
-
-/* ===== INTRO TEXT ===== */
-.tutorial-introduction {
-  margin-top: 16px;
-}
-
-.introduction-text {
-  font-size: 15px; /* Reduzido de 17px */
-  line-height: 1.5;
-  color: #374151;
-}
 /* ===== STEP VIEW ===== */
-/* (Mantenha as classes de texto como estavam, altere apenas a imagem abaixo) */
+.step-view-header { display: flex; align-items: center; gap: 12px; }
+.step-number-large { font-size: 24px; font-weight: 800; color: #2563eb; }
+.step-title-large { font-size: 18px; font-weight: 700; color: #111827; }
 
+/* IMAGENS AJUSTADAS PARA 200px */
 .step-image-container {
-  margin-top: 12px;
-  border-radius: 8px;
-  overflow: hidden;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #f8fafc;
-  border: 1px solid #e5e7eb;
-  
-  /* MUDANÇA CRÍTICA: Reduzi de 300px para 200px */
-  height: 200px; 
+  margin-top: 12px; border-radius: 8px; overflow: hidden;
+  width: 100%; display: flex; justify-content: center; align-items: center;
+  background-color: #f8fafc; border: 1px solid #e5e7eb;
+  height: 200px; /* Altura reduzida */
 }
-
 .step-image {
-  width: auto;
-  height: auto;
-  max-width: 100%;
-  max-height: 100%;
-  border-radius: 6px;
-  display: block;
-  object-fit: contain; 
+  width: auto; height: auto; max-width: 100%; max-height: 100%;
+  border-radius: 6px; display: block; object-fit: contain;
 }
-
 .step-image-placeholder {
-  margin-top: 12px;
-  background: #f3f4f6;
-  border-radius: 8px;
-  padding: 20px;
-  text-align: center;
-  color: #6b7280;
-  font-size: 13px;
-  
-  /* MUDANÇA CRÍTICA: Reduzi para acompanhar o container */
-  height: 200px; 
-  
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin-top: 12px; background: #f3f4f6; border-radius: 8px;
+  padding: 20px; text-align: center; color: #6b7280; font-size: 13px;
+  height: 200px; display: flex; align-items: center; justify-content: center;
 }
+.step-description-large { margin-top: 16px; font-size: 15px; line-height: 1.5; color: #374151; }
 
-/* ===== CONTROLS ===== */
-.tutorial-controls {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+/* ===== CONCLUSION (Estilos que faltavam) ===== */
+.tutorial-conclusion-view {
+  display: flex; flex-direction: column; align-items: center;
+  justify-content: center; padding: 20px 0; text-align: center;
+  min-height: 200px;
 }
+.conclusion-title { font-size: 22px; font-weight: 700; color: #111827; margin-bottom: 16px; }
+.conclusion-text-large { font-size: 16px; line-height: 1.6; color: #374151; }
 
-/* ===== LISTEN BUTTON ===== */
+/* ===== CONTROLS & NAV ===== */
+.tutorial-controls { display: flex; flex-direction: column; gap: 16px; }
+
 .listen-button {
-  width: 100%;
-  background: #2563eb;
-  color: white;
-  padding: 10px; /* Reduzido de 14px */
-  border: none;
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  font-size: 15px; /* Reduzido de 17px */
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.2s;
+  width: 100%; background: #2563eb; color: white; padding: 10px;
+  border: none; border-radius: 10px; display: flex; justify-content: center;
+  align-items: center; gap: 8px; font-size: 15px; font-weight: 600; cursor: pointer; transition: 0.2s;
 }
+.listen-button:hover { background: #1e40af; }
+.listen-icon { width: 18px; height: 18px; }
 
-.listen-button:hover {
-  background: #1e40af;
-}
-
-.listen-icon {
-  width: 18px;
-  height: 18px;
-}
-/* ===== NAVIGATION ===== */
 .navigation-buttons {
-  display: flex;
-  flex-direction: row; /* MUDANÇA: Alinha itens na horizontal */
-  gap: 12px;
-  align-items: center;
-  justify-content: space-between; /* Botões nas pontas, indicadores no meio */
-  width: 100%; /* Garante que o container ocupe a largura total */
+  display: flex; flex-direction: row; gap: 12px;
+  align-items: center; justify-content: space-between; width: 100%;
 }
-
 .nav-button {
-  background: #f3f4f6;
-  padding: 10px 16px;
-  border-radius: 10px;
-  border: none;
-  font-size: 14px;
-  color: #374151;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  transition: 0.2s;
-  font-weight: 500;
-  white-space: nowrap; /* Evita que o texto "Próximo" quebre linha */
-  flex-shrink: 0; /* Garante que os botões não encolham demais */
+  background: #f3f4f6; padding: 10px 16px; border-radius: 10px; border: none;
+  font-size: 14px; color: #374151; cursor: pointer; display: flex; align-items: center;
+  gap: 8px; font-weight: 500; white-space: nowrap; flex-shrink: 0;
 }
+.nav-button:hover:not(:disabled) { background: #e5e7eb; }
+.nav-button:disabled { opacity: 0.4; cursor: not-allowed; }
+.nav-icon { width: 16px; height: 16px; }
 
-.nav-button:hover:not(:disabled) {
-  background: #e5e7eb;
-}
-
-.nav-button:disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
-}
-
-.nav-icon {
-  width: 16px;
-  height: 16px;
-}
-
-/* ===== STEP INDICATOR ===== */
+/* ===== STEP INDICATOR (CLICÁVEL) ===== */
 .step-indicator {
-  display: flex;
-  gap: 4px; /* Reduzi levemente o gap para caber melhor entre os botões */
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  margin-top: 0; /* Removido pois agora está centralizado verticalmente */
-  flex: 1; /* Ocupa todo o espaço disponível no centro */
-  padding: 0 8px; /* Margem de segurança interna */
+  display: flex; gap: 4px; flex-wrap: wrap; justify-content: center;
+  align-items: center; flex: 1; padding: 0 8px;
 }
-
 .step-indicator span {
-  background: #e5e7eb;
-  padding: 4px 8px;
-  border-radius: 6px;
-  font-size: 12px;
-  color: #374151;
-  transition: 0.2s;
-  cursor: default; /* Opcional: indica que não é clicável (baseado no seu JSX) */
-  white-space: nowrap;
+  background: #e5e7eb; padding: 4px 10px; border-radius: 6px;
+  font-size: 12px; color: #374151; transition: 0.2s;
+  cursor: pointer; /* Mãozinha de clique */
+  white-space: nowrap; user-select: none;
 }
-
+.step-indicator span:hover { background: #d1d5db; transform: translateY(-1px); }
 .step-indicator span.active {
-  background: #2563eb;
-  color: white;
-  font-weight: 600;
+  background: #2563eb; color: white; font-weight: 600; cursor: default;
 }
-/* ===== STEP VIEW ===== */
-.step-view-header {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.step-number-large {
-  font-size: 24px;
-  font-weight: 800;
-  color: #2563eb;
-}
-
-.step-title-large {
-  font-size: 18px;
-  font-weight: 700;
-  color: #111827;
-}
-
-/* Container da imagem ajustado */
-.step-image-container {
-  margin-top: 16px;
-  border-radius: 8px;
-  overflow: hidden;
-  width: 100%;
-  /* Adicionado: Centraliza a imagem se ela for mais estreita que o container */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* Opcional: cor de fundo sutil e borda para delimitar a área da imagem */
-  background-color: #f8fafc;
-  border: 1px solid #e5e7eb;
-  /* Define uma altura fixa para o container da imagem */
-  height: 300px; 
-}
-
-/* Imagem ajustada */
-.step-image {
-  /* MUDANÇA CRÍTICA: */
-  width: auto; /* Não força mais 100% de largura */
-  height: auto; /* Deixa a altura se ajustar */
-  
-  /* Garante que a imagem nunca ultrapasse as dimensões do container */
-  max-width: 100%;
-  max-height: 100%;
-  
-  border-radius: 6px; /* Raio um pouco menor para caber dentro da borda do container */
-  display: block;
-  
-  /* MUDANÇA CRÍTICA: garante que a imagem caiba inteira sem cortar e sem distorcer */
-  object-fit: contain; 
-}
-
-.step-image-placeholder {
-  margin-top: 16px;
-  background: #f3f4f6;
-  border-radius: 8px;
-  padding: 30px;
-  text-align: center;
-  color: #6b7280;
-  font-size: 13px;
-  /* Adicionado para manter consistência de altura com as imagens reais */
-  height: 300px; 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.step-description-large {
-  margin-top: 16px;
-  font-size: 15px;
-  line-height: 1.5;
-  color: #374151;
-}
+.step-indicator span.active:hover { background: #2563eb; transform: none; }

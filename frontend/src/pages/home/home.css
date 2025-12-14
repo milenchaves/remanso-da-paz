@@ -12,17 +12,10 @@
     --cor-jogos: #f15bb5;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    overflow: hidden;
-}
-
 .home-page {
     font-family: 'Baloo', 'Baloo Paaji 2', 'Merriweather', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     background: linear-gradient(to top, var(--cor-fundo-claro), #eef2ff);
-    height: 100vh;
+    min-height: calc(100vh - 70px);
     padding-top: 70px;
     padding-bottom: 20px;
     margin: 0;
@@ -31,7 +24,6 @@ body {
     align-items: center;
     justify-content: flex-start;
     width: 100%;
-    overflow: hidden;
 }
 
 .bem-vindo {
@@ -57,7 +49,6 @@ body {
     align-items: center;
     justify-content: center;
     flex: 1;
-    overflow: hidden;
 }
 
 .versiculo-card {
