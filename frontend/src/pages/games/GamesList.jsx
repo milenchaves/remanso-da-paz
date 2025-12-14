@@ -8,8 +8,7 @@ export default function GamesList() {
     { id: 2, name: "Quiz de Conhecimentos", color: "#118AB2" },
     { id: 3, name: "Organize a gaveta", color: "#5bf19fff" },
     { id: 4, name: "Adivinhe o Intruso", color: "#9D4EDD", path: "/games/odd-one-out" },
-    
-    { id: 6, name: "Praticando Digitação", color: "#4CC9F0", path: "/games/typing" },
+    { id: 5, name: "Praticando Digitação", color: "#4CC9F0", path: "/games/typing" },
   ];
 
   const handleGameClick = (game) => {
