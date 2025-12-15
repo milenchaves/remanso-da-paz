@@ -97,6 +97,18 @@ export const QUIZ_LEVELS = [
       },
       {
         id: 2,
+        question: 'No WhatsApp, o que significa quando os dois tracinhos (✓✓) da mensagem ficam azuis?',
+        options: [
+          'A mensagem foi apagada',
+          'A pessoa visualizou (leu) a mensagem',
+          'A mensagem não foi enviada',
+          'A pessoa está sem internet'
+        ],
+        correct: 1,
+        explanation: 'Quando os dois tracinhos ficam azuis, significa que a outra pessoa abriu e visualizou sua mensagem.'
+      },
+      {
+        id: 3,
         question: 'Para gravar um vídeo, primeiro devemos:',
         options: [
           'Tocar no botão vermelho',
@@ -108,7 +120,7 @@ export const QUIZ_LEVELS = [
         explanation: 'Primeiro é preciso mudar da função "Foto" para "Vídeo" na câmera.'
       },
       {
-        id: 3,
+        id: 4,
         question: 'Quando enviamos um áudio pelo WhatsApp, o que acontece quando soltamos o botão?',
         options: [
           'O áudio é apagado',
@@ -120,7 +132,7 @@ export const QUIZ_LEVELS = [
         explanation: 'Ao soltar o botão do microfone, o áudio é enviado automaticamente para a conversa.'
       },
       {
-        id: 4,
+        id: 5,
         question: 'Para ver fotos antigas na Galeria, devemos:',
         options: [
           'Tocar na foto mais recente',
@@ -132,7 +144,7 @@ export const QUIZ_LEVELS = [
         explanation: 'Deslizar a tela permite navegar por todas as fotos, como folhear um álbum.'
       },
       {
-        id: 5,
+        id: 6,
         question: 'O que acontece quando tocamos no microfone do YouTube?',
         options: [
           'O vídeo para',
@@ -144,7 +156,7 @@ export const QUIZ_LEVELS = [
         explanation: 'O microfone ativa a função de pesquisa por voz, permitindo falar o que queremos buscar.'
       },
       {
-        id: 6,
+        id: 7,
         question: 'Para fazer uma ligação pelo WhatsApp, após abrir a conversa, tocamos em:',
         options: [
           'O microfone',
@@ -156,7 +168,7 @@ export const QUIZ_LEVELS = [
         explanation: 'O ícone de telefone fica no canto superior direito da tela de conversa.'
       },
       {
-        id: 7,
+        id: 8,
         question: 'Se você tirou uma foto que não gostou, em qual ícone deve tocar para apagá-la?',
         options: [
           'Na lupa',
@@ -168,7 +180,7 @@ export const QUIZ_LEVELS = [
         explanation: 'O ícone de lixeira serve para excluir (jogar fora) arquivos que não queremos mais manter no celular.'
       },
       {
-        id: 8,
+        id: 9,
         question: 'Para pesquisar no Google usando a voz, o que devemos fazer?',
         options: [
           'Falar diretamente no celular',
@@ -180,7 +192,7 @@ export const QUIZ_LEVELS = [
         explanation: 'Primeiro tocamos no ícone do microfone, depois falamos o que queremos pesquisar.'
       },
       {
-        id: 9,
+        id: 10,
         question: 'Onde encontramos o botão para desligar uma ligação de vídeo?',
         options: [
           'No canto superior esquerdo',
@@ -190,18 +202,6 @@ export const QUIZ_LEVELS = [
         ],
         correct: 1,
         explanation: 'O botão vermelho de telefone no centro inferior da tela encerra a chamada de vídeo.'
-      },
-      {
-        id: 10,
-        question: 'Para ver uma foto em tamanho grande na Galeria, devemos:',
-        options: [
-          'Deslizar a tela',
-          'Tocar na foto uma vez',
-          'Tocar duas vezes',
-          'Segurar a foto'
-        ],
-        correct: 1,
-        explanation: 'Tocar uma vez na foto abre ela em tamanho grande, ocupando toda a tela.'
       }
     ]
   },
