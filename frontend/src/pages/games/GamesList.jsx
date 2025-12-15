@@ -8,7 +8,7 @@ export default function GamesList() {
     { id: 1, name: "Jogo da Memória", color: "#FF6B6B", path: "/games/memoryGame" },
     { id: 2, name: "Quiz de Conhecimentos", color: "#118AB2", path: "/games/quiz" },
     { id: 3, name: "Organize a gaveta", color: "#5bf19fff", path: "/games/DrawerOrganizer" },
-    { id: 4, name: "Adivinhe o Intruso", color: "#9D4EDD", path: "/games/oddOneOut" },
+    { id: 4, name: "Adivinhe o Intruso", color: "#9D4EDD", path: "/games/odd-one-out" },
     { id: 5, name: "Jogo de digitação", color: "#dd4ebeff", path: "/games/typing" },
   ];
 
