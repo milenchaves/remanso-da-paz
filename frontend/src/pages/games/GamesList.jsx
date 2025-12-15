@@ -6,7 +6,7 @@ export default function GamesList() {
 
   const games = [
     { id: 1, name: "Jogo da Memória", color: "#FF6B6B", path: "/games/memoryGame" },
-    { id: 2, name: "Quiz de Conhecimentos", color: "#118AB2" },
+    { id: 2, name: "Quiz de Conhecimentos", color: "#118AB2", path: "/games/quiz" },
     { id: 3, name: "Organize a gaveta", color: "#5bf19fff", path: "/games/DrawerOrganizer" },
     { id: 4, name: "Adivinhe o Intruso", color: "#9D4EDD", path: "/games/odd-one-out" },
   ];
@@ -43,10 +43,7 @@ export default function GamesList() {
             }}
           >
             <div className="game-card-content">
-              <div
-                className="game-icon"
-                style={{ backgroundColor: game.color }}
-              >
+              <div className="game-icon">
                 <span className="game-number">{game.id}</span>
               </div>
               <h3 className="game-name">{game.name}</h3>
