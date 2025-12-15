@@ -8,7 +8,8 @@ export default function GamesList() {
     { id: 1, name: "Jogo da Memória", color: "#FF6B6B", path: "/games/memoryGame" },
     { id: 2, name: "Quiz de Conhecimentos", color: "#118AB2", path: "/games/quiz" },
     { id: 3, name: "Organize a gaveta", color: "#5bf19fff", path: "/games/DrawerOrganizer" },
-    { id: 4, name: "Adivinhe o Intruso", color: "#9D4EDD", path: "/games/odd-one-out" },
+    { id: 4, name: "Adivinhe o Intruso", color: "#9D4EDD", path: "/games/oddOneOut" },
+    { id: 5, name: "Jogo de digitação", color: "#dd4ebeff", path: "/games/typing" },
   ];
 
   const handleGameClick = (game) => {
@@ -43,7 +44,10 @@ export default function GamesList() {
             }}
           >
             <div className="game-card-content">
-              <div className="game-icon">
+              <div
+                className="game-icon"
+                style={{ backgroundColor: game.color }}
+              >
                 <span className="game-number">{game.id}</span>
               </div>
               <h3 className="game-name">{game.name}</h3>

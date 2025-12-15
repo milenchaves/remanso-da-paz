@@ -105,23 +105,9 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 1.5rem;
-  background: linear-gradient(135deg, var(--card-color) 0%, var(--card-color) 100%);
+  background: linear-gradient(135deg, var(--card-color) 0%, color-mix(in srgb, var(--card-color) 60%, white) 100%);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.game-icon::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0.2) 100%);
-  border-radius: 50%;
-  pointer-events: none;
 }
 
 .game-card:hover .game-icon {
@@ -133,11 +119,6 @@
   font-weight: 800;
   color: white;
   text-shadow: 1px 2px 3px rgba(0,0,0,0.2);
-  font-stretch: normal;
-  font-variant-numeric: normal;
-  letter-spacing: normal;
-  display: inline-block;
-  line-height: 1;
 }
 
 .game-name {
@@ -225,21 +206,10 @@
   .game-icon {
     width: 85px;
     height: 85px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .game-icon::before {
-    border-radius: 50%;
   }
 
   .game-number {
     font-size: 2rem;
-    font-stretch: normal;
-    font-variant-numeric: normal;
-    letter-spacing: normal;
-    display: inline-block;
-    line-height: 1;
   }
 
   .game-name {
@@ -278,21 +248,10 @@
   .game-icon {
     width: 75px;
     height: 75px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .game-icon::before {
-    border-radius: 50%;
   }
 
   .game-number {
     font-size: 1.8rem;
-    font-stretch: normal;
-    font-variant-numeric: normal;
-    letter-spacing: normal;
-    display: inline-block;
-    line-height: 1;
   }
 
   .game-name {

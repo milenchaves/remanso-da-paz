@@ -171,53 +171,6 @@ class TutorialService {
         conclusion: 'Agora você pode compartilhar seus momentos especiais com quem você ama! Sempre que quiser enviar uma foto, lembre-se: abra o WhatsApp, escolha a pessoa, toque no clipe, selecione a foto e envie.'
       },
       {
-        id: 6,
-        title: 'Capturar vídeo na câmera.',
-        icon: 'video',
-        color: 'purple',
-        description: 'Registre momentos em movimento!',
-        introduction: 'Tem momentos que uma foto não é suficiente, você quer registrar aquele netinho correndo, aquele passarinho cantando, ou até mesmo gravar um recado para alguém. Para isso, o vídeo é perfeito. Mas aí vem a dúvida: "Como é que grava um vídeo no celular?" É mais fácil do que parece. Vou te ensinar um jeito que funciona em quase todos os aparelhos.',
-        steps: [
-          {
-            step: 1,
-            title: 'Abra a câmera.',
-            description: 'Na tela principal, deslize o dedo de baixo para cima para ver todos os aplicativos. Procure o ícone da Câmera (aquele com desenho de máquina fotográfica) e toque nele.',
-            image: null
-          },
-          {
-            step: 2,
-            title: 'Mude para o modo vídeo.',
-            description: 'Quando a câmera abrir, olhe na parte de baixo da tela. Você vai ver algumas palavras como "Foto", "Vídeo", "Retrato". Deslize o dedo para o lado até que a palavra "Vídeo" fique destacada ou no centro. Assim você sai do modo foto e entra no modo vídeo.',
-            image: null
-          },
-          {
-            step: 3,
-            title: 'Aponte o celular.',
-            description: 'Agora mova o celular até que o que você quer filmar apareça bem na tela, pode ser uma pessoa, um animal, uma paisagem, o que você quiser registrar. Se quiser se gravar, toque no ícone com duas flechinhas formando um círculo. Assim a câmera vira para você.',
-            image: null
-          },
-          {
-            step: 4,
-            title: 'Toque no botão vermelho para começar.',
-            description: 'Na parte de baixo da tela, há um botão redondo vermelho (ou às vezes branco que fica vermelho quando você começa a gravar). Toque nele uma vez para começar a gravar. Você vai ver que o botão muda de aparência, e pode aparecer um relógio mostrando quanto tempo está gravando.',
-            image: null
-          },
-          {
-            step: 5,
-            title: 'Toque de novo para parar.',
-            description: 'Quando terminar de gravar o que você queria, toque novamente no mesmo botão (agora geralmente um quadrado vermelho). O vídeo vai parar e ser salvo automaticamente.',
-            image: null
-          },
-          {
-            step: 6,
-            title: 'Para ver o vídeo.',
-            description: 'No canto da tela (geralmente embaixo), aparece um quadradinho com a imagem do vídeo que você acabou de gravar. Toque nele se quiser assistir.',
-            image: null
-          }
-        ],
-        conclusion: 'Agora você pode gravar todos os momentos especiais em movimento! Sempre que quiser fazer um vídeo, é só mudar para o modo vídeo, apontar, tocar no botão vermelho e gravar.'
-      },
-      {
         id: 7,
         title: 'Pesquisar no Google. ',
         icon: 'search',
@@ -247,13 +200,13 @@ class TutorialService {
             step: 4,
             title: 'Aguarde os resultados.',
             description: 'O celular vai transformar sua voz em texto e mostrar os resultados na tela. Às vezes, o próprio celular fala a resposta para você! Role a tela para cima e para baixo para ver mais informações.',
-            image: null
+            image: '/tutorials/tutorial-7/passo4.jpeg'
           },
           {
             step: 5,
             title: 'Toque no resultado que te interessa.',
             description: 'Se quiser ver mais detalhes sobre alguma resposta, é só tocar nela com o dedo.',
-            image: null
+            image: '/tutorials/tutorial-7/passo5.jpeg'
           }
         ],
         conclusion: 'Agora você pode encontrar qualquer informação sem precisar digitar! Sempre que quiser pesquisar algo, lembre-se: abra o Google, toque no microfone e fale o que você quer saber.'
@@ -270,19 +223,19 @@ class TutorialService {
             step: 1,
             title: 'Encontre o botão do assistente.',
             description: 'Na maioria dos celulares, basta apertar e segurar o botão redondo na parte de baixo da tela, aquele usado para voltar à tela inicial. Em outros aparelhos, basta dizer: "Ok Google" ou "E aí, Siri" E o assistente aparece na mesma hora, como quem diz: "Oi! Estou ouvindo."',
-            image: null
+            image: '/tutorials/tutorial-8/passo1.jpeg'
           },
           {
             step: 2,
             title: 'Fale o que você quer.',
             description: 'Quando o assistente aparecer, basta falar naturalmente, como se estivesse conversando com alguém: "Coloque um alarme para 7 da manhã." "Ligue para minha filha." "Que dia da semana é hoje?" "Como está o clima?"',
-            image: null
+            image: '/tutorials/tutorial-8/passo2.jpeg'
           },
           {
             step: 3,
             title: 'Deixe o celular fazer o resto.',
             description: 'Assim que você fala, o assistente faz tudo sozinho. É como ter um ajudante pessoal no bolso o dia inteiro.',
-            image: null
+            image: '/tutorials/tutorial-8/passo3.jpeg'
           }
         ],
         conclusion: 'Viu só? Você nem precisa tocar em muitos botões. Quando quiser resolver algo rápido, lembre-se: chame o assistente e fale com calma. Ele faz por você.'
@@ -299,31 +252,31 @@ class TutorialService {
             step: 1,
             title: 'Abrir a Galeria.',
             description: 'Procure na tela o ícone que parece uma florzinha colorida, um sol, ou uma paisagem com montanhas — depende do aparelho. Se não encontrar, deslize o dedo de baixo para cima para mostrar todos os aplicativos. Toque na Galeria.',
-            image: null
+            image: '/tutorials/tutorial-9/passo1.jpeg'
           },
           {
             step: 2,
             title: 'Entrar nos álbuns ou fotos recentes.',
             description: 'Quando a Galeria abrir, você verá duas possibilidades: – As fotos recentes (as mais novas aparecem primeiro) – Os álbuns, que são como pastas organizadas (Câmera, WhatsApp, Downloads, etc.) Toque onde quiser explorar.',
-            image: null
+            image: '/tutorials/tutorial-9/passo2.jpeg'
           },
           {
             step: 3,
             title: 'Deslizar para ver mais fotos.',
             description: 'Agora é simples: é só deslizar o dedo para cima ou para baixo, ou para o lado, como se estivesse folheando um álbum de família.',
-            image: null
+            image: '/tutorials/tutorial-9/passo3.jpeg'
           },
           {
             step: 4,
             title: 'Abrir uma foto.',
             description: 'Quando encontrar a foto que deseja ver melhor, toque nela uma vez. Ela abre grande, ocupando a tela toda.',
-            image: null
+            image: '/tutorials/tutorial-9/passo4.jpeg'
           },
           {
             step: 5,
             title: 'Voltar ou passar para a próxima.',
             description: '– Para ver a próxima foto, deslize o dedo para a esquerda. – Para ver a anterior, deslize para a direita. – Para voltar para a lista, toque na seta no canto superior.',
-            image: null
+            image: '/tutorials/tutorial-9/passo5.jpeg'
           }
         ],
         conclusion: 'Viu como é tranquilo? A Galeria é seu álbum digital — sempre organizado e fácil de folhear. Sempre que quiser rever um momento, é só abrir a Galeria e deslizar com calma.'
@@ -340,37 +293,37 @@ class TutorialService {
             step: 1,
             title: 'Abrir o aplicativo de Telefone.',
             description: 'Procure o ícone que tem o desenho de um telefone tradicional, geralmente verde. Ele costuma ficar logo na tela principal. Toque nele uma vez.',
-            image: null
+            image: '/tutorials/tutorial-10/passo1.jpeg'
           },
           {
             step: 2,
             title: 'Ir até os contatos ou usar o teclado.',
             description: 'Dentro do aplicativo, você terá algumas opções: – Contatos (a lista das pessoas salvas) – Recentes (quem você ligou por último) – Teclado (para digitar o número) A maneira mais fácil é pelos Contatos. Toque nessa opção.',
-            image: null
+            image: '/tutorials/tutorial-10/passo2.jpeg'
           },
           {
             step: 3,
             title: 'Encontrar o nome da pessoa.',
             description: 'Agora é só deslizar devagar a lista de contatos até achar o nome de quem você quer ligar: seu filho, sua irmã, um amigo, quem for. Quando encontrar, toque no nome.',
-            image: null
+            image: '/tutorials/tutorial-10/passo3.jpeg'
           },
           {
             step: 4,
             title: 'Tocar no símbolo de telefone.',
             description: 'Na tela do contato, haverá o ícone de um telefone. Toque nele uma vez para iniciar a ligação. O celular vai começar a chamar: trim… trim… trim…',
-            image: null
+            image: '/tutorials/tutorial-10/passo4.jpeg'
           },
           {
             step: 5,
             title: 'Falar normalmente quando atenderem.',
             description: 'Assim que a pessoa atender, a conversa começa imediatamente. Fale como se estivesse com o telefone fixo nas mãos — simples e familiar.',
-            image: null
+            image: '/tutorials/tutorial-10/passo5.jpeg'
           },
           {
             step: 6,
             title: 'Encerrar a ligação.',
             description: 'Quando terminar, toque no botão vermelho com o desenho de um telefone virado para baixo. Pronto! A ligação foi encerrada.',
-            image: null
+            image: '/tutorials/tutorial-10/passo6.jpeg'
           }
         ],
         conclusion: 'Viu como é fácil? Sempre que quiser ouvir alguém sem complicação, procure o telefone verde, encontre o contato e toque no ícone de ligação. O celular continua sendo o mesmo telefone de sempre — só ficou mais moderninho.'

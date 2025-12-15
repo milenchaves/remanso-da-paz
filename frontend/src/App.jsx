@@ -10,6 +10,7 @@ import OddOneOut from "./pages/games/oddOneOut/OddOneOut";
 import TypingGame from "./pages/games/typing/TypingGame";
 import MemoryGame from "./pages/games/memoryGame/MemoryGame";
 import QuizGame from "./pages/games/quiz/QuizGame";
+import DrawerOrganizer from "./pages/games/DrawerOrganizer/DrawerOrganizer";
 
 function App() {
   return (
@@ -22,7 +23,8 @@ function App() {
           <Route path="/games/odd-one-out" element={<OddOneOut />} />
           <Route path="/games/odd-one-out/:themeId" element={<OddOneOut />} />
           <Route path="/games/typing" element={<TypingGame />} />
-          <Route path="/games/quiz" element={<QuizGame />} />          
+          <Route path="/games/quiz" element={<QuizGame />} />
+          <Route path="/games/DrawerOrganizer" element={<DrawerOrganizer />} />          
           <Route path="/tutorials" element={<TutorialsList />} />
           <Route path="/tutorials/:id" element={<TutorialDetail />} />
         </Route>
