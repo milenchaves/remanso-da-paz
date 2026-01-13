@@ -1,0 +1,235 @@
+.typing-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  min-height: 70vh;
+}
+
+.typing-header {
+  margin-bottom: 20px;
+  text-align: center;
+  width: 100%;
+}
+
+.typing-header h1 {
+  color: #1e3a8a;
+  margin-bottom: 0.5rem;
+  font-size: 1.8rem;
+}
+
+.typing-header p {
+  color: #64748b;
+  font-size: 1rem;
+}
+
+.level-progress {
+  font-weight: 600;
+  color: #3b82f6 !important;
+  background: #eff6ff;
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 12px;
+}
+
+/* === MENU DE NÍVEIS === */
+.levels-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.level-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  border: 2px solid #e2e8f0;
+  padding: 20px;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: left;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.level-card:hover {
+  border-color: #3b82f6;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+}
+
+.level-card:active {
+  transform: scale(0.98);
+}
+
+.level-info h3 {
+  margin: 0 0 5px 0;
+  color: #1e3a8a;
+  font-size: 1.2rem;
+}
+
+.level-info span {
+  color: #64748b;
+  font-size: 0.95rem;
+}
+
+/* === ÁREA DA MENSAGEM (BALÃO) === */
+.message-area {
+  width: 100%;
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: center;
+}
+
+.received-bubble {
+  background-color: #fff;
+  border: 2px solid #e2e8f0;
+  border-radius: 20px;
+  border-top-left-radius: 4px;
+  padding: 25px 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+
+.bubble-label {
+  display: block;
+  font-size: 0.85rem;
+  color: #94a3b8;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.target-text {
+  font-size: 26px;
+  font-weight: 700;
+  color: #1e293b;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* === ÁREA DE DIGITAÇÃO === */
+.input-area {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.typing-input {
+  flex: 1;
+  padding: 15px;
+  font-size: 20px;
+  color: #1e293b;
+  border: 2px solid #cbd5e1;
+  border-radius: 12px;
+  outline: none;
+  transition: all 0.3s;
+  background-color: white;
+}
+
+.typing-input::placeholder {
+  color: #cbd5e1;
+}
+
+.typing-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.typing-input.error {
+  border-color: #ef4444;
+  background-color: #fef2f2;
+  color: #dc2626;
+  animation: shake 0.4s ease;
+}
+
+.typing-input.success {
+  border-color: #22c55e;
+  background-color: #f0fdf4;
+  color: #166534;
+}
+
+.send-btn {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  width: 65px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.send-btn:hover {
+  background-color: #2563eb;
+}
+
+.send-btn.success {
+  background-color: #22c55e;
+}
+
+.send-btn:active {
+  transform: scale(0.95);
+}
+
+/* === FEEDBACK E DICAS === */
+.feedback-area {
+  min-height: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.feedback {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 30px;
+  animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.feedback.error {
+  color: #dc2626;
+  background-color: #fee2e2;
+}
+
+.feedback.success {
+  color: #15803d;
+  background-color: #dcfce7;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.hint-text {
+  color: #64748b;
+  font-style: italic;
+  font-size: 1rem;
+  background: #f8fafc;
+  padding: 8px 16px;
+  border-radius: 20px;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
